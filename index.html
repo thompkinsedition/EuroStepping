@@ -17,44 +17,74 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:15px;}
 
-  /* HERO */
-  .hero{position:relative;background:var(--ink);color:white;min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;overflow:hidden;}
+  /* ── HERO ── */
+  .hero{position:relative;background:var(--ink);color:white;min-height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 2rem 0;overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(43,74,107,.5) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(107,43,74,.5) 0%,transparent 60%),linear-gradient(160deg,#1A1612 0%,#2C2318 100%);}
-  .hero-skyline{position:absolute;bottom:0;left:0;right:0;height:160px;opacity:.15;}
-  .hero-content{position:relative;z-index:2;}
-  .hero-eyebrow{font-weight:300;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
-  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:400;line-height:1.1;margin-bottom:.5rem;}
+  .hero-skyline{position:absolute;bottom:0;left:0;right:0;height:140px;opacity:.15;}
+  .hero-content{position:relative;z-index:2;width:100%;}
+  .hero-eyebrow{font-weight:300;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.5rem);font-weight:400;line-height:1.1;margin-bottom:.4rem;}
   .hero h1 em{font-style:italic;color:var(--gold);}
-  .hero-sub{font-size:16px;color:rgba(255,255,255,.6);margin-top:1rem;font-weight:300;}
-  .countdown-row{display:flex;gap:2rem;margin-top:2.5rem;justify-content:center;}
+  .hero-sub{font-size:15px;color:rgba(255,255,255,.6);margin-top:.75rem;font-weight:300;}
+  .countdown-row{display:flex;gap:1.5rem;margin-top:1.75rem;justify-content:center;}
   .countdown-block{text-align:center;}
-  .countdown-num{display:block;font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1;color:white;}
-  .countdown-label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:4px;display:block;}
-  .countdown-sep{font-family:'Playfair Display',serif;font-size:2rem;color:rgba(255,255,255,.2);align-self:flex-start;padding-top:4px;}
-  .families-strip{display:flex;gap:1rem;margin-top:2.5rem;justify-content:center;flex-wrap:wrap;}
-  .family-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:40px;padding:6px 18px;font-size:13px;color:rgba(255,255,255,.75);font-weight:300;}
+  .countdown-num{display:block;font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;line-height:1;color:white;}
+  .countdown-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:3px;display:block;}
+  .countdown-sep{font-family:'Playfair Display',serif;font-size:1.8rem;color:rgba(255,255,255,.2);align-self:flex-start;padding-top:3px;}
+  .families-strip{display:flex;gap:.75rem;margin-top:1.75rem;justify-content:center;flex-wrap:wrap;}
+  .family-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:40px;padding:5px 15px;font-size:12px;color:rgba(255,255,255,.75);font-weight:300;}
 
-  /* LAYOUT */
+  /* ── LIVE BAR (compact, scrolls horizontally on mobile) ── */
+  .live-bar{
+    background:var(--ink);
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:.75rem 0 1.25rem;
+    position:relative;
+    z-index:3;
+  }
+  .live-bar-inner{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 1rem;
+    display:flex;
+    gap:.6rem;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .live-bar-inner::-webkit-scrollbar{display:none;}
+  .live-chip{
+    flex:0 0 auto;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:.55rem .85rem;
+    min-width:130px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .chip-label{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+  .chip-main{display:flex;align-items:baseline;gap:5px;}
+  .chip-time{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;color:white;line-height:1;}
+  .chip-ampm{font-size:11px;color:rgba(255,255,255,.5);}
+  .chip-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:1px;}
+  .chip-weather{display:flex;align-items:center;gap:4px;margin-top:3px;}
+  .chip-weather-icon{font-size:13px;}
+  .chip-weather-temp{font-size:12px;font-weight:500;color:rgba(255,255,255,.8);}
+  .chip-weather-desc{font-size:10px;color:rgba(255,255,255,.4);}
+  .chip-fx{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;color:var(--gold);line-height:1;}
+  .chip-fx-sub{font-size:10px;color:rgba(255,255,255,.4);}
+  .chip-divider{width:1px;background:rgba(255,255,255,.08);flex-shrink:0;margin:0 .1rem;}
+
+  /* ── LAYOUT ── */
   .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
-  section{padding:3.5rem 0;border-bottom:1px solid var(--border);}
+  section{padding:3rem 0;border-bottom:1px solid var(--border);}
   section:last-of-type{border-bottom:none;}
   .section-label{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;}
   .section-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:400;margin-bottom:2rem;}
 
-  /* WIDGETS */
-  .widgets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
-  .widget-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.5rem;position:relative;overflow:hidden;}
-  .widget-city{font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.5rem;}
-  .widget-time{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:400;line-height:1;letter-spacing:-.02em;}
-  .widget-ampm{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink-muted);font-weight:300;margin-left:4px;}
-  .widget-date-line{font-size:12px;color:var(--ink-faint);margin-top:4px;}
-  .widget-weather-row{display:flex;align-items:center;gap:10px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
-  .weather-temp{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;}
-  .weather-desc{font-size:12px;color:var(--ink-muted);line-height:1.3;}
-  .widget-accent-london{position:absolute;top:0;right:0;width:80px;height:80px;background:var(--london-light);border-radius:0 16px 0 80px;opacity:.4;}
-  .widget-accent-paris{position:absolute;top:0;right:0;width:80px;height:80px;background:var(--paris-light);border-radius:0 16px 0 80px;opacity:.4;}
-
-  /* TIMELINE */
+  /* ── TIMELINE ── */
   .timeline-row{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:stretch;margin-bottom:2rem;}
   .city-block{border-radius:16px;padding:1.8rem;}
   .city-block.london{background:var(--london);color:white;}
@@ -68,9 +98,9 @@
   .connector-line{flex:1;width:1px;background:var(--border-strong);}
   .connector-icon{background:var(--gold);color:white;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
 
-  /* FLIGHT CARDS */
-  .flight-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1rem;display:grid;grid-template-columns:1fr auto 1fr auto;gap:1rem;align-items:center;}
-  .flight-time{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;line-height:1;}
+  /* ── FLIGHT CARDS ── */
+  .flight-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.25rem;margin-bottom:.75rem;display:grid;grid-template-columns:1fr auto 1fr auto;gap:1rem;align-items:center;}
+  .flight-time{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:400;line-height:1;}
   .flight-airport{font-size:12px;color:var(--ink-muted);margin-top:2px;}
   .flight-date{font-size:11px;color:var(--ink-faint);}
   .flight-middle{text-align:center;}
@@ -78,34 +108,18 @@
   .flight-number{font-size:11px;color:var(--ink-faint);}
   .flight-arrow{display:flex;align-items:center;gap:4px;color:var(--ink-faint);font-size:18px;margin:4px 0;}
   .flight-arrow-line{flex:1;height:1px;background:var(--border-strong);}
-  .flight-duration{font-size:11px;color:var(--gold);font-weight:500;text-align:center;}
-  .flight-meta{text-align:right;font-size:12px;color:var(--ink-muted);}
+  .flight-duration{font-size:11px;color:var(--gold);font-weight:500;}
+  .flight-meta{text-align:right;font-size:12px;}
   .badge-conf{display:inline-block;background:var(--success-light);color:var(--success);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:500;letter-spacing:.06em;}
   .badge-warn{display:inline-block;background:var(--warn-light);color:var(--warn);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:500;}
   .badge-info{display:inline-block;background:var(--london-light);color:var(--london);border-radius:6px;padding:3px 10px;font-size:11px;font-weight:500;}
   .flight-family-tag{display:inline-block;background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:2px 8px;font-size:11px;color:var(--ink-muted);margin-top:4px;}
 
-  /* PARTICIPANTS */
-  .participants-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-  .family-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.5rem;}
-  .family-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:.3rem;}
-  .family-hometown{font-size:12px;color:var(--ink-faint);margin-bottom:1rem;}
-  .member-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
-  .member-list li{display:flex;align-items:center;gap:8px;font-size:14px;}
-  .member-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;}
-  .av-blue{background:var(--london-light);color:var(--london);}
-  .av-rose{background:var(--paris-light);color:var(--paris);}
-  .av-gold{background:var(--gold-light);color:#7A5B1A;}
-  .member-role{font-size:11px;color:var(--ink-faint);margin-left:auto;}
-
-  /* ══════════════════════════════════════
-     ACCORDION AGENDA
-  ══════════════════════════════════════ */
-  .itinerary{display:flex;flex-direction:column;gap:0;}
-
-  .city-section-header{display:flex;align-items:center;gap:1rem;padding:1.2rem 0 0.6rem;margin-top:1rem;}
+  /* ── ACCORDION AGENDA ── */
+  .itinerary{display:flex;flex-direction:column;}
+  .city-section-header{display:flex;align-items:center;gap:1rem;padding:1.2rem 0 .6rem;margin-top:1rem;}
   .city-section-header:first-child{margin-top:0;}
-  .city-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:30px;font-size:13px;font-weight:500;letter-spacing:.04em;}
+  .city-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:30px;font-size:13px;font-weight:500;}
   .city-pill.london{background:var(--london);color:white;}
   .city-pill.paris{background:var(--paris);color:white;}
   .city-section-line{flex:1;height:1px;background:var(--border);}
@@ -135,24 +149,26 @@
   .tag-pending{background:var(--warn-light);color:var(--warn);}
   .tag-free{background:var(--london-light);color:var(--london);}
   .tag-kids{background:var(--paris-light);color:var(--paris);}
+  .tag-aj{background:var(--gold-light);color:#7A5B1A;}
 
   .day-chevron{width:28px;height:28px;border-radius:50%;background:var(--cream);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-muted);transition:transform .25s,background .2s;flex-shrink:0;}
   .day-row.open .day-chevron{transform:rotate(180deg);background:var(--ink);color:white;border-color:var(--ink);}
 
   .day-panel{background:white;border:1px solid var(--border-strong);border-top:none;border-radius:0 0 14px 14px;overflow:hidden;max-height:0;transition:max-height .35s ease;margin-bottom:6px;}
-  .day-panel.open{max-height:2400px;}
+  .day-panel.open{max-height:2800px;}
   .day-panel-inner{padding:0 1.25rem 1.25rem;}
 
-  .event-row{display:grid;grid-template-columns:90px 1fr;gap:.75rem;padding:.9rem 0;border-bottom:1px solid var(--border);align-items:start;}
+  .event-row{display:grid;grid-template-columns:90px 1fr;gap:.75rem;padding:.85rem 0;border-bottom:1px solid var(--border);align-items:start;}
   .event-row:last-child{border-bottom:none;}
-  .event-time{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--ink-muted);padding-top:2px;font-weight:400;line-height:1.3;}
+  .event-time{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--ink-muted);padding-top:2px;line-height:1.3;}
   .event-title{font-size:14px;font-weight:500;margin-bottom:3px;line-height:1.3;}
   .event-desc{font-size:13px;color:var(--ink-muted);line-height:1.5;}
   .event-note{font-size:12px;color:var(--gold);margin-top:4px;font-style:italic;}
   .event-conf{font-size:11px;font-weight:500;color:var(--success);background:var(--success-light);border-radius:5px;padding:2px 8px;display:inline-block;margin-top:4px;}
+  .event-who{font-size:11px;background:var(--cream);border:1px solid var(--border);border-radius:5px;padding:2px 8px;display:inline-block;margin-top:4px;color:var(--ink-muted);}
 
-  .inline-flight{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;margin-top:8px;display:grid;grid-template-columns:1fr auto 1fr;gap:.75rem;align-items:center;}
-  .if-code{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;line-height:1;color:var(--ink);}
+  .inline-flight{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;margin-top:8px;display:grid;grid-template-columns:1fr auto 1fr;gap:.75rem;align-items:center;}
+  .if-code{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;line-height:1;}
   .if-city{font-size:11px;color:var(--ink-faint);margin-top:1px;}
   .if-time{font-size:12px;color:var(--ink-muted);font-weight:500;margin-top:4px;}
   .if-mid{text-align:center;}
@@ -162,19 +178,19 @@
   .if-dur{font-size:11px;color:var(--gold);font-weight:500;}
   .if-conf-row{display:flex;justify-content:center;margin-top:6px;}
 
-  /* RESTAURANTS */
+  /* ── RESTAURANTS / ACTIVITY CARDS ── */
   .restaurants-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;}
   .restaurant-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.4rem;}
   .restaurant-city-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle;}
   .dot-london{background:var(--london);}
   .dot-paris{background:var(--paris);}
-  .restaurant-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;margin:.4rem 0 .2rem;}
-  .restaurant-meta{font-size:13px;color:var(--ink-muted);margin-bottom:.8rem;}
+  .restaurant-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;margin:.4rem 0 .2rem;line-height:1.3;}
+  .restaurant-meta{font-size:13px;color:var(--ink-muted);margin-bottom:.8rem;line-height:1.5;}
   .restaurant-detail{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;border-top:1px solid var(--border);font-size:13px;}
   .restaurant-time{font-weight:500;}
-  .restaurant-who{font-size:11px;color:var(--ink-faint);margin-top:6px;}
+  .restaurant-who{font-size:11px;color:var(--ink-faint);margin-top:5px;}
 
-  /* TO-DO */
+  /* ── TO-DO ── */
   .todo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;}
   .todo-column h3{font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.8rem;}
   .todo-items{display:flex;flex-direction:column;gap:.5rem;}
@@ -189,8 +205,8 @@
   .todo-urgent .todo-dl{color:#C0392B;}
   .todo-urgent{border-left:3px solid #E74C3C;}
 
-  /* NOTES */
-  .notes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+  /* ── NOTES ── */
+  .notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
   .note-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.4rem;}
   .note-family{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.5rem;}
   .note-list{list-style:none;padding:0;margin:0;}
@@ -198,29 +214,28 @@
   .note-list li:last-child{border-bottom:none;}
   .note-list li::before{content:'→ ';color:var(--gold);}
 
-  footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:12px;letter-spacing:.05em;}
+  footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:12px;}
   footer strong{color:var(--gold);font-weight:400;}
 
   @media(max-width:768px){
     .flight-card{grid-template-columns:1fr 1fr;}
-    .participants-grid,.notes-grid{grid-template-columns:1fr;}
     .timeline-row{grid-template-columns:1fr;}
     .day-row{grid-template-columns:48px 1fr auto;}
-    .event-row{grid-template-columns:70px 1fr;}
+    .event-row{grid-template-columns:68px 1fr;}
     .inline-flight{grid-template-columns:1fr;}
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <div class="hero">
   <div class="hero-bg"></div>
   <svg class="hero-skyline" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax meet" fill="white">
     <rect x="20" y="80" width="12" height="80"/><rect x="40" y="60" width="20" height="100"/><rect x="70" y="40" width="16" height="120"/>
     <rect x="100" y="20" width="22" height="140"/><rect x="107" y="5" width="8" height="20"/><polygon points="107,5 115,0 123,5"/>
-    <rect x="130" y="50" width="30" height="110"/><rect x="170" y="65" width="18" height="95"/><rect x="200" y="45" width="25" height="115"/>
-    <rect x="235" y="70" width="14" height="90"/><rect x="260" y="60" width="18" height="100"/><rect x="290" y="60" width="18" height="100"/>
+    <rect x="130" y="50" width="30" height="110"/><rect x="170" y="65" width="18" height="95"/>
+    <rect x="260" y="60" width="18" height="100"/><rect x="290" y="60" width="18" height="100"/>
     <rect x="260" y="60" width="48" height="8"/><rect x="263" y="30" width="12" height="38"/><rect x="293" y="30" width="12" height="38"/>
     <rect x="760" y="70" width="18" height="90"/><rect x="790" y="50" width="24" height="110"/>
     <polygon points="840,160 855,80 870,160"/><polygon points="845,80 855,20 865,80"/><rect x="853" y="20" width="4" height="22"/>
@@ -242,87 +257,111 @@
       <div class="countdown-block"><span class="countdown-num" id="cd-mins">—</span><span class="countdown-label">Minutes</span></div>
     </div>
     <div class="families-strip">
-      <div class="family-pill">The Lane Family — Overland Park</div>
-      <div class="family-pill">The OG Lane Family — Olathe</div>
-      <div class="family-pill">The Lane/Heiny Family — Seattle</div>
+      <div class="family-pill">Lane Family — Overland Park</div>
+      <div class="family-pill">OG Lane Family — Olathe</div>
+      <div class="family-pill">Lane/Heiny — Renton, WA</div>
     </div>
   </div>
-</div>
 
-<!-- LIVE WIDGETS -->
-<section><div class="container">
-  <p class="section-label">Live Info</p>
-  <h2 class="section-title">Current Conditions</h2>
-  <div class="widgets-grid">
-    <div class="widget-card">
-      <div class="widget-accent-london"></div>
-      <p class="widget-city">🏛 London, UK</p>
-      <div class="widget-time" id="london-time">—<span class="widget-ampm" id="london-ampm"></span></div>
-      <p class="widget-date-line" id="london-date">—</p>
-      <div class="widget-weather-row"><span style="font-size:22px">⛅</span><div><div class="weather-temp">London</div><div class="weather-desc">Live clock above</div></div></div>
-    </div>
-    <div class="widget-card">
-      <div class="widget-accent-paris"></div>
-      <p class="widget-city">🗼 Paris, France</p>
-      <div class="widget-time" id="paris-time">—<span class="widget-ampm" id="paris-ampm"></span></div>
-      <p class="widget-date-line" id="paris-date">—</p>
-      <div class="widget-weather-row"><span style="font-size:22px">☀️</span><div><div class="weather-temp">Paris</div><div class="weather-desc">Live clock above</div></div></div>
-    </div>
-    <div class="widget-card">
-      <p class="widget-city">🏠 Kansas City Area</p>
-      <div class="widget-time" id="kc-time">—<span class="widget-ampm" id="kc-ampm"></span></div>
-      <p class="widget-date-line" id="kc-date">—</p>
-      <div class="widget-weather-row"><span style="font-size:22px">🌤</span><div><div class="weather-temp">Home base</div><div class="weather-desc">Overland Park · Olathe</div></div></div>
-    </div>
-    <div class="widget-card">
-      <p class="widget-city">✈️ First Departure</p>
-      <div style="margin-top:.5rem">
-        <div style="font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.2">MCI → DEN → LHR</div>
-        <div style="font-size:13px;color:var(--ink-muted);margin-top:4px">June 27 · United UA 2123 + UA 262</div>
+  <!-- ── COMPACT LIVE BAR (attached to bottom of hero) ── -->
+  <div class="live-bar" style="width:100%;margin-top:1.75rem;">
+    <div class="live-bar-inner">
+
+      <!-- London clock + weather -->
+      <div class="live-chip">
+        <div class="chip-label">🏛 London</div>
+        <div class="chip-main">
+          <span class="chip-time" id="lon-t">—</span>
+          <span class="chip-ampm" id="lon-ap"></span>
+        </div>
+        <div class="chip-sub" id="lon-d">—</div>
+        <div class="chip-weather" id="lon-wx">
+          <span class="chip-weather-icon">⏳</span>
+          <span class="chip-weather-temp" id="lon-tmp">—</span>
+          <span class="chip-weather-desc" id="lon-desc">loading…</span>
+        </div>
       </div>
-      <div class="widget-weather-row">
-        <div style="width:100%"><div style="font-size:12px;color:var(--ink-faint);margin-bottom:4px">Confirmation</div><span class="badge-conf">LJC80T</span></div>
+
+      <div class="chip-divider"></div>
+
+      <!-- Paris clock + weather -->
+      <div class="live-chip">
+        <div class="chip-label">🗼 Paris</div>
+        <div class="chip-main">
+          <span class="chip-time" id="par-t">—</span>
+          <span class="chip-ampm" id="par-ap"></span>
+        </div>
+        <div class="chip-sub" id="par-d">—</div>
+        <div class="chip-weather">
+          <span class="chip-weather-icon">⏳</span>
+          <span class="chip-weather-temp" id="par-tmp">—</span>
+          <span class="chip-weather-desc" id="par-desc">loading…</span>
+        </div>
       </div>
+
+      <div class="chip-divider"></div>
+
+      <!-- KC clock -->
+      <div class="live-chip">
+        <div class="chip-label">🏠 Kansas City</div>
+        <div class="chip-main">
+          <span class="chip-time" id="kc-t">—</span>
+          <span class="chip-ampm" id="kc-ap"></span>
+        </div>
+        <div class="chip-sub" id="kc-d">—</div>
+        <div class="chip-weather">
+          <span class="chip-weather-icon">🌤</span>
+          <span class="chip-weather-temp" style="color:rgba(255,255,255,.6);font-size:10px">Home base</span>
+        </div>
+      </div>
+
+      <div class="chip-divider"></div>
+
+      <!-- USD → GBP -->
+      <div class="live-chip" style="min-width:115px;">
+        <div class="chip-label">💷 USD → GBP</div>
+        <div class="chip-main">
+          <span class="chip-fx" id="gbp-rate">—</span>
+        </div>
+        <div class="chip-sub" id="gbp-sub">loading…</div>
+        <div class="chip-weather" style="margin-top:2px;">
+          <span class="chip-weather-desc">$1 USD =</span>
+        </div>
+      </div>
+
+      <div class="chip-divider"></div>
+
+      <!-- USD → EUR -->
+      <div class="live-chip" style="min-width:115px;">
+        <div class="chip-label">💶 USD → EUR</div>
+        <div class="chip-main">
+          <span class="chip-fx" id="eur-rate">—</span>
+        </div>
+        <div class="chip-sub" id="eur-sub">loading…</div>
+        <div class="chip-weather" style="margin-top:2px;">
+          <span class="chip-weather-desc">$1 USD =</span>
+        </div>
+      </div>
+
+      <div class="chip-divider"></div>
+
+      <!-- Next flight -->
+      <div class="live-chip" style="min-width:145px;">
+        <div class="chip-label">✈️ Departs</div>
+        <div class="chip-main" style="flex-direction:column;gap:0;align-items:flex-start;">
+          <span style="font-family:'Playfair Display',serif;font-size:1rem;color:white;line-height:1.2">MCI→DEN→LHR</span>
+        </div>
+        <div class="chip-sub">Jun 27 · UA 2123 + UA 262</div>
+        <div class="chip-weather" style="margin-top:3px;">
+          <span class="chip-weather-temp" style="font-size:10px;color:rgba(255,255,255,.7);">Conf: LJC80T</span>
+        </div>
+      </div>
+
     </div>
   </div>
-</div></section>
+</div><!-- end .hero -->
 
-<!-- PARTICIPANTS -->
-<section><div class="container">
-  <p class="section-label">Who's Coming</p>
-  <h2 class="section-title">The Three Families</h2>
-  <div class="participants-grid">
-    <div class="family-card">
-      <div class="family-name">The Lane Family</div>
-      <div class="family-hometown">Overland Park, Kansas</div>
-      <ul class="member-list">
-        <li><div class="member-avatar av-blue">DL</div>David Lane<span class="member-role">Dad · 39</span></li>
-        <li><div class="member-avatar av-blue">EL</div>Emily Lane<span class="member-role">Mom · 36</span></li>
-        <li><div class="member-avatar av-blue">JL</div>Joey Lane<span class="member-role">Age 7</span></li>
-        <li><div class="member-avatar av-blue">EV</div>Evie Lane<span class="member-role">Age 4</span></li>
-      </ul>
-    </div>
-    <div class="family-card">
-      <div class="family-name">The OG Lane Family</div>
-      <div class="family-hometown">Olathe, Kansas</div>
-      <ul class="member-list">
-        <li><div class="member-avatar av-rose">TL</div>Tammy Lane<span class="member-role">Age 67</span></li>
-        <li><div class="member-avatar av-rose">CL</div>Craig Lane<span class="member-role">Age 72</span></li>
-      </ul>
-    </div>
-    <div class="family-card">
-      <div class="family-name">The Lane / Heiny Family</div>
-      <div class="family-hometown">Seattle, Washington</div>
-      <ul class="member-list">
-        <li><div class="member-avatar av-gold">AL</div>Aric Lane</li>
-        <li><div class="member-avatar av-gold">JH</div>Jay Heiny</li>
-      </ul>
-      <p style="font-size:12px;color:var(--ink-faint);margin-top:.8rem;font-style:italic">Still confirming which activities they'll join</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- TRIP OVERVIEW -->
+<!-- ═══ TRIP OVERVIEW ═══ -->
 <section><div class="container">
   <p class="section-label">Overview</p>
   <h2 class="section-title">The Journey</h2>
@@ -333,15 +372,14 @@
       <div class="city-block-dates">June 28 – July 4, 2026</div>
       <div class="city-block-hotel">
         <strong>Airbnb — 14 Westbourne Terrace Road</strong>
-        Greater London, England W2 6NF<br>
-        4 Bedroom · All 3 families · Host: Justin Cavell<br><br>
+        Greater London W2 6NF · 4 Bed · All 3 families<br>Host: Justin Cavell<br><br>
         <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:2px 10px;font-size:11px">Conf: HMDJRKTX8E</span>
       </div>
     </div>
     <div class="timeline-connector">
       <div class="connector-line"></div>
       <div class="connector-icon">🚄</div>
-      <div style="font-size:10px;text-align:center;color:var(--ink-faint);letter-spacing:.05em">Eurostar<br>July 4</div>
+      <div style="font-size:10px;text-align:center;color:var(--ink-faint);letter-spacing:.05em;margin-top:4px">Eurostar<br>July 4<br>12:31pm</div>
       <div class="connector-line"></div>
     </div>
     <div class="city-block paris">
@@ -350,59 +388,78 @@
       <div class="city-block-dates">July 4 – July 9, 2026</div>
       <div class="city-block-hotel">
         <strong>Airbnb — 2 bis Rue Alasseur</strong>
-        Paris, Île-de-France 75015<br>
-        4 Bedroom · All 3 families · Host: LLA Co<br><br>
+        Paris 75015 · 4 Bed · All 3 families<br>Host: LLA Co<br><br>
         <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:2px 10px;font-size:11px">Conf: HMHJEWH9M9</span>
       </div>
     </div>
   </div>
 </div></section>
 
-<!-- FLIGHTS -->
+<!-- ═══ FLIGHTS ═══ -->
 <section><div class="container">
   <p class="section-label">Transportation</p>
   <h2 class="section-title">Flights &amp; Transfers</h2>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.75rem">Outbound — Kansas City → London (June 27) · Conf: LJC80T</p>
+  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.6rem">Outbound — June 27 · Lane + OG Lane · Conf: LJC80T</p>
   <div class="flight-card">
-    <div><div class="flight-time">5:24<span style="font-size:.9rem">pm</span></div><div class="flight-airport">MCI · Kansas City</div><div class="flight-date">Sat, June 27</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 2123</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h · Leg 1</div></div>
-    <div><div class="flight-time">6:25<span style="font-size:.9rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat, June 27</div></div>
+    <div><div class="flight-time">5:24<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City</div><div class="flight-date">Sat Jun 27</div></div>
+    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 2123</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h</div></div>
+    <div><div class="flight-time">6:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
     <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
   </div>
   <div class="flight-card">
-    <div><div class="flight-time">8:25<span style="font-size:.9rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat, June 27</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 262</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~9h · Overnight</div></div>
-    <div><div class="flight-time">12:25<span style="font-size:.9rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun, June 28</div></div>
+    <div><div class="flight-time">8:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
+    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 262</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~9h overnight</div></div>
+    <div><div class="flight-time">12:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
     <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:1.5rem 0 .75rem">London → Paris · Eurostar (July 4)</p>
+  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Outbound — June 27 · Aric &amp; Jay · Conf: HJ3JNO</p>
   <div class="flight-card">
-    <div><div class="flight-time">TBD</div><div class="flight-airport">St Pancras International</div><div class="flight-date">Sat, July 4</div></div>
-    <div class="flight-middle"><div class="flight-airline">EUROSTAR</div><div class="flight-number">To be booked</div><div class="flight-arrow"><div class="flight-arrow-line"></div>🚄<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h 16m · Direct</div></div>
-    <div><div class="flight-time">TBD</div><div class="flight-airport">Gare du Nord, Paris</div><div class="flight-date">Sat, July 4</div></div>
-    <div class="flight-meta"><span class="badge-warn">⚠ Book Soon</span><br><span class="flight-family-tag">All Families</span></div>
+    <div><div class="flight-time">10:05<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle</div><div class="flight-date">Sat Jun 27</div></div>
+    <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0020</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Overnight nonstop</div></div>
+    <div><div class="flight-time">3:35<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
+    <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:1.5rem 0 .75rem">Return — Paris → Kansas City (July 9) · Conf: LJC80T</p>
+  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">London → Paris · Eurostar — July 4</p>
   <div class="flight-card">
-    <div><div class="flight-time">11:15<span style="font-size:.9rem">am</span></div><div class="flight-airport">CDG · Paris Charles de Gaulle</div><div class="flight-date">Thu, July 9</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 986</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~8h · Leg 1</div></div>
-    <div><div class="flight-time">1:15<span style="font-size:.9rem">pm</span></div><div class="flight-airport">ORD · Chicago O'Hare</div><div class="flight-date">Thu, July 9</div></div>
+    <div><div class="flight-time">12:31<span style="font-size:.85rem">pm</span></div><div class="flight-airport">St Pancras International</div><div class="flight-date">Sat Jul 4</div></div>
+    <div class="flight-middle"><div class="flight-airline">EUROSTAR</div><div class="flight-number">Ref: 2343928</div><div class="flight-arrow"><div class="flight-arrow-line"></div>🚄<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h 18m direct</div></div>
+    <div><div class="flight-time">3:49<span style="font-size:.85rem">pm</span></div><div class="flight-airport">Gare du Nord, Paris</div><div class="flight-date">Sat Jul 4</div></div>
+    <div class="flight-meta"><span class="badge-conf">2343928</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+  </div>
+  <div class="flight-card">
+    <div><div class="flight-time">12:31<span style="font-size:.85rem">pm</span></div><div class="flight-airport">St Pancras International</div><div class="flight-date">Sat Jul 4</div></div>
+    <div class="flight-middle"><div class="flight-airline">EUROSTAR</div><div class="flight-number">Ref: J6W44N</div><div class="flight-arrow"><div class="flight-arrow-line"></div>🚄<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h 18m direct</div></div>
+    <div><div class="flight-time">3:49<span style="font-size:.85rem">pm</span></div><div class="flight-airport">Gare du Nord, Paris</div><div class="flight-date">Sat Jul 4</div></div>
+    <div class="flight-meta"><span class="badge-conf">J6W44N</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
+  </div>
+
+  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Return — July 9 · Lane + OG Lane · Conf: LJC80T</p>
+  <div class="flight-card">
+    <div><div class="flight-time">11:15<span style="font-size:.85rem">am</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
+    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 986</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~8h</div></div>
+    <div><div class="flight-time">1:15<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
     <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
   </div>
   <div class="flight-card">
-    <div><div class="flight-time">3:52<span style="font-size:.9rem">pm</span></div><div class="flight-airport">ORD · Chicago O'Hare</div><div class="flight-date">Thu, July 9</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 664</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~1h 44m · Home!</div></div>
-    <div><div class="flight-time">5:36<span style="font-size:.9rem">pm</span></div><div class="flight-airport">MCI · Kansas City</div><div class="flight-date">Thu, July 9</div></div>
+    <div><div class="flight-time">3:52<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
+    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 664</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~1h 44m</div></div>
+    <div><div class="flight-time">5:36<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City 🏠</div><div class="flight-date">Thu Jul 9</div></div>
     <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+  </div>
+
+  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Return — July 9 · Aric &amp; Jay · Conf: HJ3JNO</p>
+  <div class="flight-card">
+    <div><div class="flight-time">4:00<span style="font-size:.85rem">pm</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
+    <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0081</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Nonstop to Seattle</div></div>
+    <div><div class="flight-time">5:27<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle 🏠</div><div class="flight-date">Thu Jul 9</div></div>
+    <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
   </div>
 </div></section>
 
-<!-- ══════════════════════════════════
-     ACCORDION DAILY AGENDA
-══════════════════════════════════ -->
+<!-- ═══ ACCORDION DAILY AGENDA ═══ -->
 <section><div class="container">
   <p class="section-label">Day by Day</p>
   <h2 class="section-title">Daily Itinerary</h2>
@@ -419,8 +476,8 @@
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jun</span><span class="date">27</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Kansas City → Denver → London ✈</div>
-        <div class="day-tags"><span class="day-tag tag-travel">Travel Day</span><span class="day-tag tag-booked">Conf: LJC80T</span></div>
+        <div class="day-title">Departure Day — Kansas City &amp; Seattle → London ✈</div>
+        <div class="day-tags"><span class="day-tag tag-travel">Travel Day</span><span class="day-tag tag-booked">Conf: LJC80T &amp; HJ3JNO</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -429,27 +486,39 @@
         <div class="event-row">
           <div class="event-time">5:24 pm</div>
           <div class="event-body">
-            <div class="event-title">MCI → Denver (DEN) · UA 2123</div>
-            <div class="event-desc">Lane + OG Lane families depart Kansas City</div>
+            <div class="event-title">MCI → Denver · UA 2123</div>
             <div class="inline-flight">
               <div><div class="if-code">MCI</div><div class="if-city">Kansas City</div><div class="if-time">5:24 pm</div></div>
               <div class="if-mid"><div class="if-carrier">UNITED</div><div class="if-num">UA 2123</div><div class="if-arrow">✈</div><div class="if-dur">~2h</div></div>
               <div><div class="if-code">DEN</div><div class="if-city">Denver</div><div class="if-time">6:25 pm</div></div>
             </div>
-            <div class="if-conf-row"><span class="badge-conf">LJC80T</span></div>
+            <div class="if-conf-row"><span class="badge-conf">LJC80T</span>&nbsp;<span class="event-who">Lane + OG Lane</span></div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">8:25 pm</div>
           <div class="event-body">
-            <div class="event-title">Denver → London Heathrow (LHR) · UA 262</div>
-            <div class="event-desc">Overnight flight — try to sleep! Arrives next day 12:25 pm London time</div>
+            <div class="event-title">Denver → London Heathrow · UA 262</div>
+            <div class="event-desc">Overnight flight — try to sleep! Arrives 12:25 pm London time Sunday</div>
             <div class="inline-flight">
               <div><div class="if-code">DEN</div><div class="if-city">Denver</div><div class="if-time">8:25 pm</div></div>
               <div class="if-mid"><div class="if-carrier">UNITED</div><div class="if-num">UA 262</div><div class="if-arrow">✈</div><div class="if-dur">~9h nonstop</div></div>
               <div><div class="if-code">LHR</div><div class="if-city">London</div><div class="if-time">12:25 pm +1</div></div>
             </div>
-            <div class="if-conf-row"><span class="badge-conf">LJC80T</span></div>
+            <div class="if-conf-row"><span class="badge-conf">LJC80T</span>&nbsp;<span class="event-who">Lane + OG Lane</span></div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">10:05 pm</div>
+          <div class="event-body">
+            <div class="event-title">Seattle → London Heathrow · DL 0020</div>
+            <div class="event-desc">Aric &amp; Jay depart separately from Seattle</div>
+            <div class="inline-flight">
+              <div><div class="if-code">SEA</div><div class="if-city">Seattle</div><div class="if-time">10:05 pm</div></div>
+              <div class="if-mid"><div class="if-carrier">DELTA</div><div class="if-num">DL 0020</div><div class="if-arrow">✈</div><div class="if-dur">Overnight</div></div>
+              <div><div class="if-code">LHR</div><div class="if-city">London</div><div class="if-time">3:35 pm +1</div></div>
+            </div>
+            <div class="if-conf-row"><span class="badge-conf">HJ3JNO</span>&nbsp;<span class="event-who">Aric &amp; Jay</span></div>
           </div>
         </div>
       </div>
@@ -459,7 +528,7 @@
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jun</span><span class="date">28</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Arrive London — Easy First Day</div>
+        <div class="day-title">Arrive London — Check In &amp; Easy First Night</div>
         <div class="day-tags"><span class="day-tag tag-travel">Arrival</span><span class="day-tag tag-booked">Airbnb: HMDJRKTX8E</span></div>
       </div>
       <div class="day-chevron">▾</div>
@@ -469,34 +538,34 @@
         <div class="event-row">
           <div class="event-time">~12:25 pm</div>
           <div class="event-body">
-            <div class="event-title">Land at Heathrow</div>
-            <div class="event-desc">Baggage claim · Take National Express coach or Heathrow Express (~15 min) to central London</div>
+            <div class="event-title">Land at Heathrow (LHR)</div>
+            <div class="event-desc">Baggage claim → Heathrow Express to Paddington (~15 min) or National Express to city centre · W2 postcode is very close to Paddington!</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">3:00 pm</div>
           <div class="event-body">
-            <div class="event-title">Check In — Airbnb London</div>
-            <div class="event-desc">14 Westbourne Terrace Road, W2 6NF · 4 bedroom · All 3 families · Host: Justin Cavell</div>
+            <div class="event-title">Check In — London Airbnb ✅</div>
+            <div class="event-desc">14 Westbourne Terrace Road, Greater London W2 6NF · 4 bedrooms · All 3 families · Host: Justin Cavell</div>
             <span class="event-conf">Conf: HMDJRKTX8E</span>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">Evening</div>
           <div class="event-body">
-            <div class="event-title">Easy First Dinner</div>
-            <div class="event-desc">Nothing too ambitious — you've been travelling 24 hours with young kids! Find something close to the Airbnb</div>
+            <div class="event-title">Easy First Dinner Near the Airbnb</div>
+            <div class="event-desc">Nothing ambitious — you've been travelling 20+ hours with young kids! Paddington / Bayswater area has plenty of casual options</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jun 29 CHANGING OF GUARD + BOROUGH MARKET -->
+    <!-- Jun 29 FORTNUM + SIGHTSEEING -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jun</span><span class="date">29</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Changing of the Guard &amp; Borough Market</div>
-        <div class="day-tags"><span class="day-tag tag-activity">Sightseeing</span><span class="day-tag tag-food">Food Market</span></div>
+        <div class="day-title">Sightseeing, Borough Market &amp; Fortnum &amp; Mason Afternoon Tea</div>
+        <div class="day-tags"><span class="day-tag tag-booked">Tea ✓ 1:15pm</span><span class="day-tag tag-activity">Sightseeing</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -505,27 +574,35 @@
         <div class="event-row">
           <div class="event-time">10:15 am</div>
           <div class="event-body">
-            <div class="event-title">Changing of the Guard</div>
-            <div class="event-desc">Buckingham Palace · Arrive 30 min early for a good spot · Big Ben and Westminster area nearby — great morning walk</div>
-            <div class="event-note">Consider booking a guided walking tour for context — book in advance</div>
+            <div class="event-title">Changing of the Guard (Tentative)</div>
+            <div class="event-desc">Buckingham Palace · Arrive 30 min early for a good spot · Big Ben &amp; Westminster area close by for a morning stroll</div>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">Afternoon</div>
+          <div class="event-time">Mid-morning</div>
           <div class="event-body">
-            <div class="event-title">Borough Market</div>
-            <div class="event-desc">London's legendary food market near London Bridge · Perfect for lunch · Incredible variety — cheese, charcuterie, street food from around the world</div>
+            <div class="event-title">Borough Market (Tentative)</div>
+            <div class="event-desc">London's legendary food market near London Bridge · Perfect for a casual late-morning snack before tea</div>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">1:15 pm</div>
+          <div class="event-body">
+            <div class="event-title">Afternoon Tea — Fortnum &amp; Mason, Diamond Jubilee Tea Salon ✅</div>
+            <div class="event-desc">181 Piccadilly, London W1A 1ER · Reservation for 8 · ~$125pp · No strict dress code · Can cancel with 48+ hrs notice</div>
+            <span class="event-conf">Conf: 8YGDFJ3WXKWC</span>&nbsp;<span class="event-who">Under Aric Lane · All 3 families</span>
+            <div class="event-note">One of London's most iconic afternoon tea experiences — perfectly placed near Piccadilly Circus</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jun 30 TOWER + NATURAL HISTORY -->
+    <!-- Jun 30 TOWER + MUSEUMS -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jun</span><span class="date">30</span></div>
       <div class="day-title-wrap">
         <div class="day-title">Tower of London &amp; Natural History Museum</div>
-        <div class="day-tags"><span class="day-tag tag-activity">Historic</span><span class="day-tag tag-kids">Kids Love This</span></div>
+        <div class="day-tags"><span class="day-tag tag-activity">Historic</span><span class="day-tag tag-kids">Great for Kids</span><span class="day-tag tag-pending">Wimbledon? — David</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -534,27 +611,27 @@
         <div class="event-row">
           <div class="event-time">Morning</div>
           <div class="event-body">
-            <div class="event-title">Tower of London</div>
-            <div class="event-desc">Crown Jewels, Beefeater guards, medieval history · Allow 2–3 hours · Book tickets in advance to skip the queue</div>
-            <div class="event-note">Also consider: Wimbledon is this week — check ticket availability if interested (David to investigate)</div>
+            <div class="event-title">Tower of London (Tentative)</div>
+            <div class="event-desc">Crown Jewels, Beefeater guards, medieval towers · Book in advance · Allow 2–3 hours</div>
+            <div class="event-note">Wimbledon is this week — David is checking ticket availability as an alternative</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">Afternoon</div>
           <div class="event-body">
-            <div class="event-title">Natural History Museum</div>
-            <div class="event-desc">Free entry · Dinosaur hall, blue whale skeleton, geology galleries · Kensington — also walk through Princess Di Park (Kensington Gardens) nearby</div>
+            <div class="event-title">Natural History Museum (Tentative)</div>
+            <div class="event-desc">Free entry · Dinosaur hall, blue whale, geology galleries · South Kensington · Also walk through Kensington Gardens (Princess Di Park) nearby</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 1 RICHMOND -->
+    <!-- Jul 1 RICHMOND + DISHOOM -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jul</span><span class="date">1</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Richmond Day Trip &amp; Covent Garden</div>
-        <div class="day-tags"><span class="day-tag tag-activity">Day Out</span><span class="day-tag tag-activity">Shopping &amp; Park</span></div>
+        <div class="day-title">Richmond Day &amp; Dinner at Dishoom</div>
+        <div class="day-tags"><span class="day-tag tag-activity">Day Out</span><span class="day-tag tag-booked">Dishoom ✓ 4:45pm</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -564,53 +641,80 @@
           <div class="event-time">10:00 am</div>
           <div class="event-body">
             <div class="event-title">Richmond — Shopping, Park &amp; Village</div>
-            <div class="event-desc">Richmond Park (royal deer park) + Richmond town · District line from central London · Feels like countryside without leaving the city · Great for the kids to run around</div>
+            <div class="event-desc">Richmond Park (royal deer park) + Richmond town centre · District line from central London · Great for kids to run around in the largest royal park in London</div>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">Eve</div>
+          <div class="event-time">4:45 pm</div>
           <div class="event-body">
-            <div class="event-title">Covent Garden</div>
-            <div class="event-desc">Street performers, restaurants, market stalls · Great atmosphere for all ages · Lots of dining options for everyone</div>
+            <div class="event-title">Dinner — Dishoom, Covent Garden ✅</div>
+            <div class="event-desc">12 Upper St Martin's Ln, London WC2H 9FB · Legendary Bombay-style café · Aric, Jay, Emily &amp; David have eaten here before — it's exceptional</div>
+            <span class="event-conf">Conf: 8N4AFF47XH5A</span>&nbsp;<span class="event-who">Under Aric Lane · All 3 families (8)</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 2 CHOCOLATE TEA + PADDINGTON -->
+    <!-- Jul 2 SPLIT DAY -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jul</span><span class="date">2</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Chocolate Factory Tea &amp; Paddington the Musical 🎭</div>
-        <div class="day-tags"><span class="day-tag tag-booked">Paddington ✓ 7pm</span><span class="day-tag tag-booked">Tea ✓ 3–5pm</span><span class="day-tag tag-kids">Lane Family</span></div>
+        <div class="day-title">Chocolate Factory Tea, Paddington Musical &amp; Oh Mary!</div>
+        <div class="day-tags"><span class="day-tag tag-booked">Tea ✓ 3pm</span><span class="day-tag tag-booked">Paddington ✓ 7pm</span><span class="day-tag tag-aj">Oh Mary! ✓ A&amp;J</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
     <div class="day-panel">
       <div class="day-panel-inner">
         <div class="event-row">
+          <div class="event-time">Midday</div>
+          <div class="event-body">
+            <div class="event-title">J Sheekey — Oysters &amp; Drinks (Aric &amp; Jay)</div>
+            <div class="event-desc">28-32 St Martin's Ct, London WC2N 4AL · Pre-theatre oysters before Oh Mary! · Classic London seafood institution</div>
+            <span class="event-conf">Conf: #2110244649</span>&nbsp;<span class="event-who">Under Aric Lane · Aric &amp; Jay only</span>
+          </div>
+        </div>
+        <div class="event-row">
           <div class="event-time">3:00 – 5:00 pm</div>
           <div class="event-body">
             <div class="event-title">Charlie &amp; The Chocolate Factory Afternoon Tea ✅</div>
-            <div class="event-desc">OneAldwych hotel, 1 Aldwych, London · Girls' activity · Lane family of 4</div>
+            <div class="event-desc">OneAldwych, 1 Aldwych, London · Girls activity · Magical Roald Dahl-themed experience</div>
+            <span class="event-who">Lane family (4) — girls + parents</span>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">5:30 pm</div>
+          <div class="event-body">
+            <div class="event-title">Oh, Mary! — Trafalgar Theatre ✅ (Aric &amp; Jay)</div>
+            <div class="event-desc">Trafalgar Theatre, London · Critically acclaimed comedy — Aric &amp; Jay's London theatre night</div>
+            <span class="event-who">Aric &amp; Jay only</span>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">7:00 pm</div>
           <div class="event-body">
             <div class="event-title">Paddington the Musical ✅</div>
-            <div class="event-desc">Lane family of 4 · Check your booking confirmation for the theatre address and seat numbers</div>
+            <div class="event-desc">Check booking confirmation for exact theatre &amp; seat details · Joey and Evie will love this!</div>
+            <span class="event-who">Lane family (4)</span>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">7:45 pm</div>
+          <div class="event-body">
+            <div class="event-title">Post-Show Dinner — Bancone Covent Garden ✅ (Aric &amp; Jay)</div>
+            <div class="event-desc">39 William IV Street, London WC2N 4DD · Acclaimed fresh pasta restaurant · Post-theatre dinner</div>
+            <span class="event-conf">Conf: 8YEZWK4NLR8H</span>&nbsp;<span class="event-who">Under Aric Lane · Aric &amp; Jay only</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 3 FREE DAY -->
+    <!-- Jul 3 FREE -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jul</span><span class="date">3</span></div>
       <div class="day-title-wrap">
         <div class="day-title">Free Day — Last Full Day in London</div>
-        <div class="day-tags"><span class="day-tag tag-free">Flexible</span><span class="day-tag tag-travel">Pack for Paris</span></div>
+        <div class="day-tags"><span class="day-tag tag-free">Flexible</span><span class="day-tag tag-travel">Pack for Paris</span><span class="day-tag tag-pending">Sky Garden — Emily</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -621,10 +725,11 @@
           <div class="event-body">
             <div class="event-title">Anything Still on the Wishlist</div>
             <div class="event-desc">
-              🧸 <strong>Hamleys</strong> — 7-floor toy store on Regent Street (Joey &amp; Evie!)<br>
-              🛍 <strong>Harrods</strong> — legendary Knightsbridge department store<br>
-              🌿 <strong>Kensington Gardens</strong> — Princess Di park, great for kids<br>
-              🍕 <strong>Portobello Road market</strong> — antiques, street food, great vibe
+              🌿 <strong>Sky Garden</strong> — free rooftop garden/bar with panoramic views (Emily to book — available 3 weeks before)<br>
+              🧸 <strong>Hamleys</strong> — 7-floor toy store on Regent Street<br>
+              🛍 <strong>Harrods</strong> — Knightsbridge legendary department store<br>
+              🌿 <strong>Kensington Gardens</strong> — Princess Di Park, great for the kids<br>
+              ☕ <strong>Portobello Road</strong> — antiques, street food, great vibe
             </div>
           </div>
         </div>
@@ -632,8 +737,7 @@
           <div class="event-time">Evening</div>
           <div class="event-body">
             <div class="event-title">Pack &amp; Prep for Eurostar Tomorrow</div>
-            <div class="event-desc">Check out of Airbnb Saturday morning · Eurostar departs July 4 (time TBD once booked) · St Pancras is a beautiful station — arrive 45 min early</div>
-            <div class="event-note">Tip: leave St Pancras time open until Eurostar is booked</div>
+            <div class="event-desc">Eurostar departs 12:31 pm Saturday · St Pancras is ~30 min from W2 · Arrive at least 45 min early · Check out of Airbnb in the morning</div>
           </div>
         </div>
       </div>
@@ -646,12 +750,12 @@
       <span class="city-section-dates">July 4–9 · 5 nights · Airbnb 75015</span>
     </div>
 
-    <!-- Jul 4 EUROSTAR -->
+    <!-- Jul 4 EUROSTAR + DINNER -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">4</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">London → Paris via Eurostar 🚄 — Happy 4th of July!</div>
-        <div class="day-tags"><span class="day-tag tag-travel">Travel Day</span><span class="day-tag tag-pending">Eurostar — Still to Book</span></div>
+        <div class="day-title">Eurostar to Paris 🚄 &amp; First Dinner — Happy 4th!</div>
+        <div class="day-tags"><span class="day-tag tag-booked">Eurostar ✓ 12:31pm</span><span class="day-tag tag-booked">Dinner ✓ 7pm</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -661,45 +765,47 @@
           <div class="event-time">Morning</div>
           <div class="event-body">
             <div class="event-title">Check Out of London Airbnb &amp; Head to St Pancras</div>
-            <div class="event-desc">Taxi or Uber to St Pancras International · Arrive 45 min before your Eurostar departure</div>
+            <div class="event-desc">Taxi or Uber · ~30 min from W2 · Arrive 45 min before departure · St Pancras is a stunning Victorian station — worth exploring</div>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">TBD</div>
+          <div class="event-time">12:31 pm</div>
           <div class="event-body">
-            <div class="event-title">Eurostar: London St Pancras → Paris Gare du Nord ⚠ Still to Book</div>
-            <div class="event-desc">~2 hours 16 minutes · Through the Channel Tunnel · All 3 families · Book at eurostar.com</div>
+            <div class="event-title">Eurostar: St Pancras → Paris Gare du Nord ✅</div>
+            <div class="event-desc">Through the Channel Tunnel! Arrives Paris 3:49 pm</div>
             <div class="inline-flight">
-              <div><div class="if-code">STP</div><div class="if-city">St Pancras, London</div><div class="if-time">TBD</div></div>
-              <div class="if-mid"><div class="if-carrier">EUROSTAR</div><div class="if-num">To be booked</div><div class="if-arrow">🚄</div><div class="if-dur">~2h 16m direct</div></div>
-              <div><div class="if-code">GDN</div><div class="if-city">Gare du Nord, Paris</div><div class="if-time">TBD</div></div>
+              <div><div class="if-code">STP</div><div class="if-city">St Pancras</div><div class="if-time">12:31 pm</div></div>
+              <div class="if-mid"><div class="if-carrier">EUROSTAR</div><div class="if-num">Ref: 2343928 / J6W44N</div><div class="if-arrow">🚄</div><div class="if-dur">~2h 18m</div></div>
+              <div><div class="if-code">GDN</div><div class="if-city">Gare du Nord</div><div class="if-time">3:49 pm</div></div>
             </div>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">Afternoon</div>
+          <div class="event-time">~4:30 pm</div>
           <div class="event-body">
             <div class="event-title">Check In — Paris Airbnb ✅</div>
-            <div class="event-desc">2 bis Rue Alasseur, Paris 75015 · 4 bedrooms · All 3 families · Host: LLA Co</div>
+            <div class="event-desc">2 bis Rue Alasseur, Paris 75015 · 4 bedrooms · All 3 families · ~7–8 min walk from Eiffel Tower!</div>
             <span class="event-conf">Conf: HMHJEWH9M9</span>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">Evening</div>
+          <div class="event-time">7:00 pm</div>
           <div class="event-body">
-            <div class="event-title">First Paris Dinner — Bonne Fête!</div>
-            <div class="event-desc">Celebrate arriving in Paris on the 4th of July 🎆 · Find a brasserie or bistro near the apartment in the 15th arrondissement</div>
+            <div class="event-title">Dinner — Le Bouchon Parisien ✅</div>
+            <div class="event-desc">28 Av. de Suffren, 75015 Paris · ~7–8 min walk from the Airbnb · Classic lively Parisian brasserie · Big, bustling, tourist-friendly pacing · "We're tired, just feed us well" option</div>
+            <span class="event-conf">Conf: #6551286</span>&nbsp;<span class="event-who">Under Aric Lane · All 3 families (8)</span>
+            <div class="event-note">Can cancel with 24 hours notice</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 5 VERSAILLES -->
+    <!-- Jul 5 VERSAILLES + NOTRE DAME -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">5</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Palace of Versailles Tour 👑</div>
-        <div class="day-tags"><span class="day-tag tag-booked">Booked via Viator ✓</span><span class="day-tag tag-activity">Full Day Trip</span></div>
+        <div class="day-title">Palace of Versailles &amp; Notre-Dame Mass 👑</div>
+        <div class="day-tags"><span class="day-tag tag-booked">Versailles ✓ 10am</span><span class="day-tag tag-aj">Notre-Dame Mass — A&amp;J + OG</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -709,29 +815,38 @@
           <div class="event-time">Morning</div>
           <div class="event-body">
             <div class="event-title">Travel to Versailles</div>
-            <div class="event-desc">RER C train from central Paris · ~40 min · Download the SNCF app before you go · Château de Versailles stop</div>
+            <div class="event-desc">RER C train from central Paris · ~40 min · Download the SNCF app · Château de Versailles stop</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">10:00 am</div>
           <div class="event-body">
-            <div class="event-title">Palace of Versailles Tour ✅ — Viator</div>
-            <div class="event-desc">Guided tour for 8 people · €68.88 per person · Hall of Mirrors, King's Grand Apartments, State Rooms</div>
-            <span class="event-conf">Viator Conf: 1764816493</span>
-            <div class="event-note">💡 Sunday Strategy: This is one of the only days for the Musical Fountains Show (April–October)! Book 10am entry, do the Palace first, then enjoy the fountains in the gardens that afternoon.</div>
+            <div class="event-title">Palace of Versailles Guided Tour ✅ — Viator</div>
+            <div class="event-desc">Guided tour · 8 people · €68.88 pp · Hall of Mirrors, King's Apartments, State Rooms</div>
+            <span class="event-conf">Viator Conf: 1764816493</span>&nbsp;<span class="event-who">All 3 families</span>
+            <div class="event-note">💡 Sunday = Musical Fountains Show (April–Oct)! Book Palace first at 10am, then fountains in the afternoon</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">Afternoon</div>
           <div class="event-body">
             <div class="event-title">Palace Gardens &amp; Musical Fountains</div>
-            <div class="event-desc">Massive gardens — bring a picnic · Grand Canal rowboats · Musical Fountains show runs April–October on Sundays</div>
+            <div class="event-desc">Massive gardens — bring picnic supplies · Grand Canal rowboats available · Musical Fountains are a unique Sunday treat</div>
+            <span class="event-who">Lane family (4)</span>
+          </div>
+        </div>
+        <div class="event-row">
+          <div class="event-time">~6:00 pm</div>
+          <div class="event-body">
+            <div class="event-title">Mass at Notre-Dame Cathedral (Aric &amp; Jay + OG Lanes)</div>
+            <div class="event-desc">Notre-Dame has been fully restored — attending Sunday Mass here is a once-in-a-generation experience after the 2019 fire · Île de la Cité</div>
+            <span class="event-who">Aric &amp; Jay + OG Lane (tentative)</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 6 MACARON + SEINE CRUISE -->
+    <!-- Jul 6 MACARON + SEINE -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">6</span></div>
       <div class="day-title-wrap">
@@ -745,34 +860,35 @@
         <div class="event-row">
           <div class="event-time">Morning</div>
           <div class="event-body">
-            <div class="event-title">Free Morning — Explore the Neighbourhood</div>
-            <div class="event-desc">The 15th arrondissement is quiet and local · Pick up breakfast at a boulangerie · Eiffel Tower is about a 10 min walk from the Airbnb — pop by for a morning visit!</div>
+            <div class="event-title">Free Morning — Explore &amp; Eiffel Tower?</div>
+            <div class="event-desc">The Airbnb at 75015 is about a 10 min walk to the Eiffel Tower · Great morning to pop by for photos or book summit tickets · Champ de Mars picnic area is right there</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">2:00 pm</div>
           <div class="event-body">
             <div class="event-title">Macaron Making Class ✅</div>
-            <div class="event-desc">4 people (girls) · Check booking confirmation for the exact address and what to bring</div>
+            <div class="event-desc">Check booking confirmation for exact address · Girls activity</div>
+            <span class="event-who">Lane family girls</span>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">9:15 pm</div>
           <div class="event-body">
-            <div class="event-title">Seine Sunset River Cruise ✅ — Viator</div>
-            <div class="event-desc">8 people · €38 per person · Bateaux Mouches or Vendettes du Pont Neuf · The Eiffel Tower sparkles on the hour after dark — magical!</div>
-            <span class="event-conf">Viator Conf: 1772569543</span>
+            <div class="event-title">Seine Sunset Cruise ✅ — Viator</div>
+            <div class="event-desc">€38 pp · 8 people · Bateaux Mouches or Vendettes du Pont Neuf · The Eiffel Tower sparkles every hour on the hour after dark — absolute highlight!</div>
+            <span class="event-conf">Viator Conf: 1772569543</span>&nbsp;<span class="event-who">All 3 families</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 7 DISNEYLAND -->
+    <!-- Jul 7 DISNEYLAND + ANNIVERSARY -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">7</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Disneyland Paris 🎡</div>
-        <div class="day-tags"><span class="day-tag tag-booked">Booked ✓ All Day</span><span class="day-tag tag-kids">Lane Family of 4</span></div>
+        <div class="day-title">Disneyland Paris 🎡 &amp; Aric + Jay Anniversary 💛</div>
+        <div class="day-tags"><span class="day-tag tag-booked">Disneyland ✓</span><span class="day-tag tag-aj">Anniversary — Aric &amp; Jay</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -781,27 +897,29 @@
         <div class="event-row">
           <div class="event-time">9:00 am</div>
           <div class="event-body">
-            <div class="event-title">Disneyland Paris ✅ — Lane Family of 4</div>
-            <div class="event-desc">RER A train from central Paris (~45 min) · Allow a full day · Joey and Evie are going to love this 🎉</div>
-            <div class="event-note">Tip: Download the Disneyland Paris app before you go for real-time wait times and show schedules. Arrive at rope drop!</div>
+            <div class="event-title">Disneyland Paris ✅</div>
+            <div class="event-desc">RER A train from central Paris (~45 min) · Allow a full day · Download the Disneyland Paris app for wait times &amp; show schedules · Arrive at rope drop!</div>
+            <span class="event-who">Lane family of 4 (Joey &amp; Evie!)</span>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">Meanwhile</div>
+          <div class="event-time">All day</div>
           <div class="event-body">
-            <div class="event-title">Free Day for OG Lanes &amp; Aric/Jay</div>
-            <div class="event-desc">Musée d'Orsay (closed Mondays — Tuesday is good) · Luxembourg Gardens · Montmartre · Île de la Cité · Notre-Dame walk</div>
+            <div class="event-title">Aric &amp; Jay Celebrate Their Anniversary 💛</div>
+            <div class="event-desc">A day to themselves in Paris while others are at Disneyland — Montmartre, Sacré-Cœur, shopping, a jazz club in the evening, anniversary dinner — Paris is the perfect backdrop</div>
+            <div class="event-note">Wishlist: Montmartre village feel · Shopping · Jazz club · Notre Dame / Louvre area</div>
+            <span class="event-who">Aric &amp; Jay — solo day</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Jul 8 LOUVRE -->
+    <!-- Jul 8 LOUVRE + ORSAY -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">8</span></div>
       <div class="day-title-wrap">
         <div class="day-title">Louvre Tour, Musée d'Orsay &amp; Notre-Dame</div>
-        <div class="day-tags"><span class="day-tag tag-booked">Louvre ✓ 9:30am</span><span class="day-tag tag-activity">Museums</span></div>
+        <div class="day-tags"><span class="day-tag tag-booked">Louvre ✓ 9:30am</span><span class="day-tag tag-activity">Museums</span><span class="day-tag tag-pending">Notre-Dame Tour?</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -810,23 +928,23 @@
         <div class="event-row">
           <div class="event-time">9:30 am</div>
           <div class="event-body">
-            <div class="event-title">Louvre Tour ✅ — Lane + OG Lane</div>
-            <div class="event-desc">Guided tour for 6 people · Winged Victory, Mona Lisa, Venus de Milo · Allow 3+ hours · Closed Tuesdays</div>
-            <span class="event-conf">Viator Conf: 1387849747</span>
+            <div class="event-title">Louvre Guided Tour ✅</div>
+            <div class="event-desc">6 people · Lane + OG Lane · Winged Victory, Mona Lisa, Venus de Milo · Allow 3+ hours · Closed Tuesdays</div>
+            <span class="event-conf">Viator Conf: 1387849747</span>&nbsp;<span class="event-who">Lane + OG Lane (6)</span>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">Afternoon</div>
           <div class="event-body">
             <div class="event-title">Musée d'Orsay (Optional)</div>
-            <div class="event-desc">Closed Mondays · Wednesday is a good day · Has a kid-friendly path · Monet, Renoir, Van Gogh · Arrive ~4pm to avoid crowds (closes 6pm)</div>
+            <div class="event-desc">Closed Mondays · Wednesday is good · Kid-friendly path · Monet, Renoir, Van Gogh · Arrive ~4pm to avoid crowds · Closes 6pm</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">Afternoon</div>
           <div class="event-body">
-            <div class="event-title">Notre-Dame Cathedral Walk</div>
-            <div class="event-desc">Île de la Cité · Walk around the cathedral and the Seine island · Still breathtaking even during ongoing restoration</div>
+            <div class="event-title">Notre-Dame Cathedral Walk / Tour</div>
+            <div class="event-desc">Île de la Cité · Now fully restored after the 2019 fire · Tours being investigated — see To-Do list</div>
           </div>
         </div>
       </div>
@@ -836,8 +954,8 @@
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">9</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Paris → Chicago → Kansas City ✈ Fly Home</div>
-        <div class="day-tags"><span class="day-tag tag-travel">Departure Day</span><span class="day-tag tag-booked">Conf: LJC80T</span></div>
+        <div class="day-title">Fly Home — Paris → Kansas City &amp; Seattle ✈</div>
+        <div class="day-tags"><span class="day-tag tag-travel">Departure Day</span><span class="day-tag tag-booked">All flights confirmed</span></div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
@@ -847,41 +965,39 @@
           <div class="event-time">Morning</div>
           <div class="event-body">
             <div class="event-title">Final Paris Morning ☕</div>
-            <div class="event-desc">Last café au lait and croissant · Pick up any remaining souvenirs · Check out of Paris Airbnb</div>
+            <div class="event-desc">Last café au lait and croissant · Final souvenirs · Check out of Paris Airbnb</div>
             <span class="event-conf">Airbnb Conf: HMHJEWH9M9</span>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">~9:00 am</div>
           <div class="event-body">
-            <div class="event-title">Transfer to Charles de Gaulle (CDG)</div>
-            <div class="event-desc">RER B train or taxi · Allow 90+ minutes for CDG international security · Terminal 1 (United)</div>
+            <div class="event-title">Transfer to CDG — Lane + OG Lane</div>
+            <div class="event-desc">RER B train or taxi · Allow 90 min for international security · Terminal 1 (United)</div>
           </div>
         </div>
         <div class="event-row">
           <div class="event-time">11:15 am</div>
           <div class="event-body">
-            <div class="event-title">CDG → Chicago O'Hare · UA 986</div>
-            <div class="event-desc">Lane + OG Lane families · Arrives Chicago 1:15 pm</div>
+            <div class="event-title">CDG → Chicago → Kansas City</div>
             <div class="inline-flight">
               <div><div class="if-code">CDG</div><div class="if-city">Paris</div><div class="if-time">11:15 am</div></div>
-              <div class="if-mid"><div class="if-carrier">UNITED</div><div class="if-num">UA 986</div><div class="if-arrow">✈</div><div class="if-dur">~8h</div></div>
-              <div><div class="if-code">ORD</div><div class="if-city">Chicago</div><div class="if-time">1:15 pm</div></div>
+              <div class="if-mid"><div class="if-carrier">UNITED</div><div class="if-num">UA 986 → UA 664</div><div class="if-arrow">✈</div><div class="if-dur">via Chicago</div></div>
+              <div><div class="if-code">MCI</div><div class="if-city">Kansas City</div><div class="if-time">5:36 pm</div></div>
             </div>
-            <div class="if-conf-row"><span class="badge-conf">LJC80T</span></div>
+            <div class="if-conf-row"><span class="badge-conf">LJC80T</span>&nbsp;<span class="event-who">Lane + OG Lane</span></div>
           </div>
         </div>
         <div class="event-row">
-          <div class="event-time">3:52 pm</div>
+          <div class="event-time">4:00 pm</div>
           <div class="event-body">
-            <div class="event-title">Chicago O'Hare → Kansas City · UA 664</div>
-            <div class="event-desc">Arrives Kansas City 5:36 pm · Welcome home! 🏠</div>
+            <div class="event-title">CDG → Seattle (Aric &amp; Jay)</div>
             <div class="inline-flight">
-              <div><div class="if-code">ORD</div><div class="if-city">Chicago</div><div class="if-time">3:52 pm</div></div>
-              <div class="if-mid"><div class="if-carrier">UNITED</div><div class="if-num">UA 664</div><div class="if-arrow">✈</div><div class="if-dur">~1h 44m</div></div>
-              <div><div class="if-code">MCI</div><div class="if-city">Kansas City</div><div class="if-time">5:36 pm</div></div>
+              <div><div class="if-code">CDG</div><div class="if-city">Paris</div><div class="if-time">4:00 pm</div></div>
+              <div class="if-mid"><div class="if-carrier">DELTA</div><div class="if-num">DL 0081</div><div class="if-arrow">✈</div><div class="if-dur">Nonstop</div></div>
+              <div><div class="if-code">SEA</div><div class="if-city">Seattle 🏠</div><div class="if-time">5:27 pm</div></div>
             </div>
-            <div class="if-conf-row"><span class="badge-conf">LJC80T</span></div>
+            <div class="if-conf-row"><span class="badge-conf">HJ3JNO</span>&nbsp;<span class="event-who">Aric &amp; Jay</span></div>
           </div>
         </div>
       </div>
@@ -890,142 +1006,195 @@
   </div><!-- end .itinerary -->
 </div></section>
 
-<!-- BOOKED ACTIVITIES -->
+<!-- ═══ RESERVATIONS ═══ -->
 <section><div class="container">
   <p class="section-label">Reservations</p>
-  <h2 class="section-title">Booked Activities &amp; Reservations</h2>
+  <h2 class="section-title">Booked Restaurants &amp; Activities</h2>
   <div class="restaurants-grid">
+
     <div class="restaurant-card">
-      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jul 2</small></div>
-      <div class="restaurant-name">Charlie &amp; The Chocolate Factory Tea 🍫</div>
-      <div class="restaurant-meta">OneAldwych · Afternoon tea · Lane family girls</div>
-      <div class="restaurant-detail"><span class="restaurant-time">3:00 – 5:00 PM</span><span class="badge-conf">Booked ✓</span></div>
+      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jun 29 · 1:15pm</small></div>
+      <div class="restaurant-name">Fortnum &amp; Mason — Diamond Jubilee Tea Salon</div>
+      <div class="restaurant-meta">181 Piccadilly W1A 1ER · Afternoon tea · ~$125pp · No strict dress code</div>
+      <div class="restaurant-detail"><span class="restaurant-time">1:15 PM</span><span class="badge-conf">8YGDFJ3WXKWC</span></div>
+      <div class="restaurant-who">All 3 families (8) · Under Aric Lane · 48hr cancellation</div>
     </div>
+
     <div class="restaurant-card">
-      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jul 2</small></div>
-      <div class="restaurant-name">Paddington the Musical 🎭</div>
-      <div class="restaurant-meta">West End show · Lane family of 4</div>
-      <div class="restaurant-detail"><span class="restaurant-time">7:00 PM</span><span class="badge-conf">Booked ✓</span></div>
+      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jul 1 · 4:45pm</small></div>
+      <div class="restaurant-name">Dishoom — Covent Garden</div>
+      <div class="restaurant-meta">12 Upper St Martin's Ln WC2H 9FB · Bombay café · Legendary black dal</div>
+      <div class="restaurant-detail"><span class="restaurant-time">4:45 PM</span><span class="badge-conf">8N4AFF47XH5A</span></div>
+      <div class="restaurant-who">All 3 families (8) · Under Aric Lane</div>
     </div>
+
     <div class="restaurant-card">
-      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 5</small></div>
-      <div class="restaurant-name">Palace of Versailles Tour 👑</div>
-      <div class="restaurant-meta">Viator guided tour · 8 people · €68.88 pp</div>
-      <div class="restaurant-detail"><span class="restaurant-time">10:00 AM</span><span class="badge-conf">Conf: 1764816493</span></div>
+      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jul 2 · Pre-theatre</small></div>
+      <div class="restaurant-name">J Sheekey — Oysters &amp; Drinks</div>
+      <div class="restaurant-meta">28-32 St Martin's Ct WC2N · Classic London seafood · Pre Oh Mary! drinks</div>
+      <div class="restaurant-detail"><span class="restaurant-time">4:15 PM</span><span class="badge-conf">#2110244649</span></div>
+      <div class="restaurant-who">Aric &amp; Jay only · Under Aric Lane</div>
+    </div>
+
+    <div class="restaurant-card">
+      <div><span class="restaurant-city-dot dot-london"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">London · Jul 2 · Post-theatre</small></div>
+      <div class="restaurant-name">Bancone — Covent Garden</div>
+      <div class="restaurant-meta">39 William IV St WC2N 4DD · Fresh pasta · Post Oh Mary! dinner</div>
+      <div class="restaurant-detail"><span class="restaurant-time">7:45 PM</span><span class="badge-conf">8YEZWK4NLR8H</span></div>
+      <div class="restaurant-who">Aric &amp; Jay only · Under Aric Lane</div>
+    </div>
+
+    <div class="restaurant-card">
+      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 4 · First night</small></div>
+      <div class="restaurant-name">Le Bouchon Parisien</div>
+      <div class="restaurant-meta">28 Av. de Suffren 75015 · ~7 min walk from Airbnb · Classic brasserie</div>
+      <div class="restaurant-detail"><span class="restaurant-time">7:00 PM</span><span class="badge-conf">#6551286</span></div>
+      <div class="restaurant-who">All 3 families (8) · Under Aric Lane · 24hr cancellation</div>
+    </div>
+
+    <div class="restaurant-card">
+      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 5 · Viator</small></div>
+      <div class="restaurant-name">Palace of Versailles Guided Tour 👑</div>
+      <div class="restaurant-meta">Via Viator · 8 people · €68.88 pp · Sunday Musical Fountains!</div>
+      <div class="restaurant-detail"><span class="restaurant-time">10:00 AM</span><span class="badge-conf">Viator: 1764816493</span></div>
       <div class="restaurant-who">All 3 families</div>
     </div>
+
     <div class="restaurant-card">
       <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 6</small></div>
       <div class="restaurant-name">Macaron Making Class 🥐</div>
-      <div class="restaurant-meta">Pastry class · 4 people (girls)</div>
+      <div class="restaurant-meta">Pastry experience · Check confirmation for address</div>
       <div class="restaurant-detail"><span class="restaurant-time">2:00 PM</span><span class="badge-conf">Booked ✓</span></div>
+      <div class="restaurant-who">Lane family girls</div>
     </div>
+
     <div class="restaurant-card">
-      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 6</small></div>
+      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 6 · Viator</small></div>
       <div class="restaurant-name">Seine Sunset Cruise 🛳</div>
-      <div class="restaurant-meta">Viator · 8 people · €38 pp · Eiffel Tower sparkling</div>
-      <div class="restaurant-detail"><span class="restaurant-time">9:15 PM</span><span class="badge-conf">Conf: 1772569543</span></div>
+      <div class="restaurant-meta">€38 pp · 8 people · Eiffel Tower sparkling at night</div>
+      <div class="restaurant-detail"><span class="restaurant-time">9:15 PM</span><span class="badge-conf">Viator: 1772569543</span></div>
       <div class="restaurant-who">All 3 families</div>
     </div>
+
     <div class="restaurant-card">
       <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 7</small></div>
       <div class="restaurant-name">Disneyland Paris 🎡</div>
-      <div class="restaurant-meta">Full day at the park · RER A from central Paris</div>
+      <div class="restaurant-meta">RER A from central Paris (~45 min) · Full day</div>
       <div class="restaurant-detail"><span class="restaurant-time">All day</span><span class="badge-conf">Booked ✓</span></div>
-      <div class="restaurant-who">Lane family of 4</div>
+      <div class="restaurant-who">Lane family of 4 · Joey &amp; Evie!</div>
     </div>
+
     <div class="restaurant-card">
-      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 8</small></div>
+      <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris · Jul 8 · Viator</small></div>
       <div class="restaurant-name">Louvre Guided Tour 🎨</div>
-      <div class="restaurant-meta">Viator guided tour · 6 people · Lane + OG Lane</div>
-      <div class="restaurant-detail"><span class="restaurant-time">9:30 AM</span><span class="badge-conf">Conf: 1387849747</span></div>
+      <div class="restaurant-meta">6 people · Lane + OG Lane · Winged Victory · Mona Lisa</div>
+      <div class="restaurant-detail"><span class="restaurant-time">9:30 AM</span><span class="badge-conf">Viator: 1387849747</span></div>
+      <div class="restaurant-who">Lane + OG Lane (6 people)</div>
     </div>
+
     <div class="restaurant-card">
       <div><span class="restaurant-city-dot dot-paris"></span><small style="color:var(--ink-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em">Paris — Restaurant Ideas</small></div>
-      <div class="restaurant-name">Paris Restaurant Ideas 🍽</div>
-      <div class="restaurant-meta">Kid-friendly: Brasserie Bellanger · Le Cornichon · Bouillon Pigalle · Beizh Cafe<br>Open Sun/Mon: Le Bon Georges · Bofinger · Le Relais de l'Entrecôte<br>Great views: Paname Brewing Co<br>Breakfast: Du Pain et des Idées · Ten Belles Bread</div>
+      <div class="restaurant-name">Paris Dining Ideas 🍽</div>
+      <div class="restaurant-meta" style="font-size:12px;line-height:1.6">
+        <strong>Kid-friendly:</strong> Brasserie Bellanger · Le Cornichon · Bouillon Pigalle · Beizh Cafe<br>
+        <strong>Open Sun/Mon:</strong> Le Bon Georges · Bofinger · Le Relais de l'Entrecôte<br>
+        <strong>Great views:</strong> Paname Brewing Co<br>
+        <strong>Breakfast:</strong> Du Pain et des Idées · Ten Belles Bread
+      </div>
       <div class="restaurant-detail"><span class="restaurant-time">No reservations yet</span><span class="badge-warn">Plan meals</span></div>
-      <div class="restaurant-who">Still to be decided — see Family Notes</div>
+      <div class="restaurant-who">Aric can make more reservations — coordinate with group</div>
     </div>
+
   </div>
 </div></section>
 
-<!-- TO-DO -->
+<!-- ═══ TO-DO ═══ -->
 <section><div class="container">
   <p class="section-label">Action Items</p>
   <h2 class="section-title">Things Still To Do</h2>
   <div class="todo-grid">
+
     <div class="todo-column">
       <h3>🇬🇧 London</h3>
       <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Eurostar: London → Paris (July 4) — eurostar.com</div><div class="todo-dl">⚠ Sells out — book now · All families</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Decide on Wimbledon (Jun 30) — check ticket availability</div><div class="todo-dl">David to investigate</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Tower of London tickets (Jun 30)</div><div class="todo-dl">Book in advance to skip queues</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Confirm with Aric/Jay which London activities they want to join</div><div class="todo-dl">Coordinate group days</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paddington the Musical — Jul 2 @ 7pm</div><div class="todo-dl">✓ Booked · Lane family of 4</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Charlie &amp; The Chocolate Factory Tea — Jul 2 @ 3pm</div><div class="todo-dl">✓ Booked · Lane family girls</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">London Airbnb — 14 Westbourne Terrace Road, W2</div><div class="todo-dl">✓ Booked · Conf: HMDJRKTX8E</div></div></div>
+        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Sky Garden tickets (Emily) — only available 3 weeks before</div><div class="todo-dl">⚠ Available from ~June 12 — free but must pre-book</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Decide on Wimbledon (David) — check ticket availability for Jun 30</div><div class="todo-dl">Wimbledon runs June 29–July 12, 2026</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Tower of London tickets (tentative Jun 30)</div><div class="todo-dl">Book in advance to skip queues</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Fortnum &amp; Mason Afternoon Tea (Jun 29 @ 1:15pm, 8 people)</div><div class="todo-dl">✓ Conf: 8YGDFJ3WXKWC · Under Aric Lane</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Dishoom dinner (Jul 1 @ 4:45pm, 8 people)</div><div class="todo-dl">✓ Conf: 8N4AFF47XH5A · Under Aric Lane</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">J Sheekey oysters pre-theatre (Jul 2 @ 4:15pm)</div><div class="todo-dl">✓ Conf: #2110244649 · Aric &amp; Jay</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Oh Mary! at Trafalgar Theatre (Jul 2 @ 5:30pm)</div><div class="todo-dl">✓ Aric &amp; Jay</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Bancone post-theatre dinner (Jul 2 @ 7:45pm)</div><div class="todo-dl">✓ Conf: 8YEZWK4NLR8H · Aric &amp; Jay</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Charlie &amp; The Chocolate Factory Tea (Jul 2 @ 3pm)</div><div class="todo-dl">✓ Lane family girls</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paddington the Musical (Jul 2 @ 7pm)</div><div class="todo-dl">✓ Lane family of 4</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">London Airbnb — 14 Westbourne Terrace Road W2</div><div class="todo-dl">✓ Conf: HMDJRKTX8E</div></div></div>
       </div>
     </div>
+
     <div class="todo-column">
       <h3>🇫🇷 Paris</h3>
       <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Make restaurant reservations in Paris — haven't booked any yet!</div><div class="todo-dl">⚠ Popular spots book up fast — especially kid-friendly ones</div></div></div>
+        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Make Paris restaurant reservations — none booked yet beyond Jul 4 dinner</div><div class="todo-dl">⚠ Kid-friendly spots &amp; others book up fast</div></div></div>
         <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Eiffel Tower summit tickets (Jul 6 morning)</div><div class="todo-dl">Sells out weeks ahead — toureiffel.paris</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Confirm with Aric/Jay about Seine Cruise (Jul 6) &amp; Louvre (Jul 8)</div><div class="todo-dl">Are they joining? Tickets may need updating</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Musée d'Orsay tickets (Jul 7 or 8)</div><div class="todo-dl">Closed Mondays · Book timed entry in advance</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Palace of Versailles Tour (Jul 5 @ 10am, 8 people)</div><div class="todo-dl">✓ Booked via Viator · Conf: 1764816493</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Seine Sunset Cruise (Jul 6 @ 9:15pm, 8 people)</div><div class="todo-dl">✓ Booked via Viator · Conf: 1772569543</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Macaron Making Class (Jul 6 @ 2pm, 4 people)</div><div class="todo-dl">✓ Booked</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Look into Notre-Dame guided tours (Jul 8)</div><div class="todo-dl">Fully restored — tours available again</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Musée d'Orsay tickets for Jul 7 or 8</div><div class="todo-dl">Closed Mondays · Book timed entry in advance</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Confirm Aric &amp; Jay joining Louvre (Jul 8) — update ticket count if needed</div><div class="todo-dl">Currently booked for 6 (Lane + OG Lane)</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Le Bouchon Parisien (Jul 4 @ 7pm, 8 people)</div><div class="todo-dl">✓ Conf: #6551286 · Under Aric Lane</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Palace of Versailles Tour (Jul 5 @ 10am)</div><div class="todo-dl">✓ Viator Conf: 1764816493</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Seine Sunset Cruise (Jul 6 @ 9:15pm)</div><div class="todo-dl">✓ Viator Conf: 1772569543</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Macaron Making Class (Jul 6 @ 2pm)</div><div class="todo-dl">✓ Booked</div></div></div>
         <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Disneyland Paris (Jul 7 @ 9am, Lane family of 4)</div><div class="todo-dl">✓ Booked</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Louvre Guided Tour (Jul 8 @ 9:30am, 6 people)</div><div class="todo-dl">✓ Booked via Viator · Conf: 1387849747</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paris Airbnb — 2 bis Rue Alasseur, 75015</div><div class="todo-dl">✓ Booked · Conf: HMHJEWH9M9</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Louvre Guided Tour (Jul 8 @ 9:30am, 6 people)</div><div class="todo-dl">✓ Viator Conf: 1387849747</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paris Airbnb — 2 bis Rue Alasseur 75015</div><div class="todo-dl">✓ Conf: HMHJEWH9M9</div></div></div>
       </div>
     </div>
+
     <div class="todo-column">
       <h3>✈️ Pre-Trip</h3>
       <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Check ALL passports — must be valid 6 months past July 9, 2026. Especially Joey (7) &amp; Evie (4)!</div><div class="todo-dl">⚠ Do this today</div></div></div>
+        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Check ALL passports — valid 6 months past July 9, 2026. Especially Joey (7) &amp; Evie (4)!</div><div class="todo-dl">⚠ Do this today</div></div></div>
         <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Get travel insurance — all 3 families</div><div class="todo-dl">Before June 1</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Set up international phone plans (UK + France)</div><div class="todo-dl">Before June 25</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">International phone plans (UK + France) for all families</div><div class="todo-dl">Before June 25</div></div></div>
         <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Notify credit cards of travel dates (Jun 27 – Jul 9)</div><div class="todo-dl">Before June 25</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Download SNCF app for Versailles RER train (needed Jul 5)</div><div class="todo-dl">Before Jul 4</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Outbound flights — UA 2123 (MCI→DEN) + UA 262 (DEN→LHR) Jun 27</div><div class="todo-dl">✓ Conf: LJC80T</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Return flights — UA 986 (CDG→ORD) + UA 664 (ORD→MCI) Jul 9</div><div class="todo-dl">✓ Conf: LJC80T</div></div></div>
+        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Download SNCF app for Versailles &amp; Paris RER trains</div><div class="todo-dl">Before Jul 4</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Outbound flights — UA 2123 + UA 262 (Lane + OG Lane) / DL 0020 (Aric &amp; Jay)</div><div class="todo-dl">✓ LJC80T &amp; HJ3JNO</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Return flights — UA 986 + UA 664 (Lane + OG Lane) / DL 0081 (Aric &amp; Jay)</div><div class="todo-dl">✓ LJC80T &amp; HJ3JNO</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Eurostar booked for all 3 families (Jul 4 @ 12:31pm)</div><div class="todo-dl">✓ Conf: 2343928 / J6W44N</div></div></div>
       </div>
     </div>
+
   </div>
 </div></section>
 
-<!-- NOTES -->
+<!-- ═══ WISHLISTS + NOTES ═══ -->
 <section><div class="container">
-  <p class="section-label">Ideas &amp; Wishlists</p>
-  <h2 class="section-title">Family Notes &amp; Wishlists</h2>
+  <p class="section-label">Plans &amp; Wishlists</p>
+  <h2 class="section-title">Family Notes &amp; Ideas</h2>
   <div class="notes-grid">
     <div class="note-card">
-      <div class="note-family">London Wishlist (Lane Family)</div>
+      <div class="note-family">Lane Family — Wishlist</div>
       <ul class="note-list">
-        <li>Tea party with the girls ✓ booked at OneAldwych</li>
+        <li>Tea party with girls ✓ Fortnum &amp; Mason Jun 29</li>
         <li>Richmond day trip ✓ planned Jul 1</li>
-        <li>Changing of the Guard · Borough Market</li>
-        <li>Tower of London · Natural History Museum</li>
-        <li>Hamleys toy store · Harrods</li>
-        <li>Kensington Gardens (Princess Di Park)</li>
-        <li>Covent Garden evening</li>
-        <li>Paddington the Musical ✓ booked</li>
+        <li>Sunset Seine cruise to Eiffel Tower ✓ Jul 6</li>
+        <li>Disneyland Paris ✓ Jul 7</li>
+        <li>Palace of Versailles ✓ Jul 5</li>
+        <li>Paddington the Musical ✓ Jul 2</li>
+        <li>Charlie &amp; Choc Factory Tea ✓ Jul 2</li>
+        <li>Eiffel Tower summit ⚠ still to book</li>
       </ul>
     </div>
     <div class="note-card">
-      <div class="note-family">Paris Wishlist (Lane Family)</div>
+      <div class="note-family">Aric &amp; Jay — Wishlist</div>
       <ul class="note-list">
-        <li>Sunset Seine cruise to Eiffel Tower ✓ booked Jul 6</li>
-        <li>Disneyland Paris ✓ booked Jul 7</li>
-        <li>Palace of Versailles with tour ✓ booked Jul 5</li>
-        <li>Eiffel Tower summit ⚠ still to book</li>
-        <li>Macaron making class ✓ booked Jul 6</li>
-        <li>Louvre tour ✓ booked Jul 8</li>
-        <li>Musée d'Orsay (kid-friendly path — closed Mondays)</li>
-        <li>Notre-Dame Cathedral walk</li>
+        <li>High tea ✓ Fortnum &amp; Mason Jun 29</li>
+        <li>Oh Mary! Play ✓ Jul 2</li>
+        <li>Eat at Dishoom ✓ Jul 1</li>
+        <li>Montmartre — village feel, Sacré-Cœur</li>
+        <li>Shopping in Paris</li>
+        <li>Anniversary celebration Jul 7 🎉</li>
+        <li>Notre-Dame / Louvre area</li>
+        <li>Jazz club in Paris</li>
       </ul>
     </div>
     <div class="note-card">
@@ -1033,35 +1202,36 @@
       <ul class="note-list">
         <li>Luxembourg garden sailboats</li>
         <li>Food tour in Montmartre (secretfoodtours.com)</li>
-        <li>Cité des Sciences — giant interactive science centre</li>
+        <li>Cité des Sciences — interactive science centre</li>
         <li>Jardin des Tuileries (by the Louvre)</li>
         <li>Musée de l'Illusion (near the Louvre)</li>
-        <li>Jardin d'Acclimatation — kid amusement park, W of Eiffel</li>
-        <li>Red Wheelbarrow bookstore</li>
-        <li>Paname Brewing Co — great river views</li>
+        <li>Jardin d'Acclimatation — kid amusement park</li>
+        <li>Sky Garden London ⚠ Emily to book Jun 12+</li>
+        <li>Paname Brewing Co — great Paris river views</li>
       </ul>
     </div>
   </div>
 
-  <!-- Family notes -->
-  <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:1.5rem;margin-top:1.5rem">
-    <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">📝 Emily's Open Questions</p>
-    <p style="font-size:14px;color:var(--ink-muted);line-height:1.7">Need to confirm with Aric &amp; Jay which group activities they want to join (Seine cruise? Louvre?) · All families travelling together on Eurostar on July 4? · No restaurant reservations made yet in Paris — probably need to decide on a few, especially kid-friendly options · See restaurant ideas in the Reservations section above.</p>
+  <!-- Aric's note -->
+  <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:1.5rem;margin-top:1.25rem">
+    <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem">📝 Aric &amp; Jay's Note</p>
+    <p style="font-size:14px;color:var(--ink-muted);line-height:1.7">Celebrating our anniversary on July 7 — that works perfectly since Lane family will be at Disneyland and others may be doing day trips. Happy to make more dinner reservations for the group in Paris — just let us know what nights need something booked!</p>
   </div>
 
+  <!-- Museum tips -->
   <div style="background:white;border:1px solid var(--border);border-left:4px solid var(--london);border-radius:12px;padding:1.5rem;margin-top:1rem">
-    <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--london);margin-bottom:.75rem">💡 Museum Timing Tips</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem">
-      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">Versailles on Sunday (Jul 5) ✓ Booked!</p><p style="font-size:13px;color:var(--ink-muted)">Sunday = Musical Fountains Show! Book 10am timed entry, do the Palace first, then enjoy the fountains in the gardens all afternoon.</p></div>
-      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">Musée d'Orsay</p><p style="font-size:13px;color:var(--ink-muted)">Closed Mondays. Arrive 30 min before opening (~9am) or very late afternoon (~4pm). Closes 6pm. Has a specific kid-friendly path.</p></div>
-      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">The Louvre (Jul 8) ✓ Booked!</p><p style="font-size:13px;color:var(--ink-muted)">Guided tour booked for 9:30am — perfect timing. Closed Tuesdays. Allow 3+ hours for the full experience.</p></div>
+    <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--london);margin-bottom:.75rem">💡 Paris Museum Timing Tips</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem">
+      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">Versailles on Sunday (Jul 5) ✓</p><p style="font-size:13px;color:var(--ink-muted)">Musical Fountains Show only runs April–Oct, and only on certain days — Sunday is one of them. 10am entry booked — do the Palace first, then fountains all afternoon.</p></div>
+      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">Musée d'Orsay</p><p style="font-size:13px;color:var(--ink-muted)">Closed Mondays. Arrive 30 min before opening (~9am) or very late (~4pm). Closes 6pm. Has a specific kid-friendly path — perfect for Joey &amp; Evie.</p></div>
+      <div><p style="font-size:13px;font-weight:500;margin-bottom:4px">The Louvre (Jul 8) ✓</p><p style="font-size:13px;color:var(--ink-muted)">Guided tour booked at 9:30am — great timing. Closed Tuesdays. Wednesday Jul 8 is ideal. Allow 3+ hours minimum.</p></div>
     </div>
   </div>
 </div></section>
 
 <footer>
   <strong>EuroStepping — London &amp; Paris · Summer 2026</strong><br>
-  <span style="margin-top:6px;display:block">Last updated: May 2026 · Shared among the Lane, OG Lane &amp; Lane/Heiny families</span>
+  <span style="margin-top:6px;display:block">Last updated: May 2026 · Lane · OG Lane · Lane/Heiny</span>
 </footer>
 
 <script>
@@ -1082,20 +1252,85 @@ function updateClocks(){
     const d=new Date(now.toLocaleString('en-US',{timeZone:tz}));
     let h=d.getHours(),m=d.getMinutes();
     const ap=h>=12?'PM':'AM';h=h%12||12;
-    return{t:h+':'+String(m).padStart(2,'0'),ap,dt:d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})};
+    return{t:h+':'+String(m).padStart(2,'0'),ap,dt:d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})};
   };
   const l=fmt('Europe/London'),p=fmt('Europe/Paris'),k=fmt('America/Chicago');
-  document.getElementById('london-time').childNodes[0].textContent=l.t;
-  document.getElementById('london-ampm').textContent=' '+l.ap;
-  document.getElementById('london-date').textContent=l.dt;
-  document.getElementById('paris-time').childNodes[0].textContent=p.t;
-  document.getElementById('paris-ampm').textContent=' '+p.ap;
-  document.getElementById('paris-date').textContent=p.dt;
-  document.getElementById('kc-time').childNodes[0].textContent=k.t;
-  document.getElementById('kc-ampm').textContent=' '+k.ap;
-  document.getElementById('kc-date').textContent=k.dt;
+  document.getElementById('lon-t').textContent=l.t;
+  document.getElementById('lon-ap').textContent=' '+l.ap;
+  document.getElementById('lon-d').textContent=l.dt;
+  document.getElementById('par-t').textContent=p.t;
+  document.getElementById('par-ap').textContent=' '+p.ap;
+  document.getElementById('par-d').textContent=p.dt;
+  document.getElementById('kc-t').textContent=k.t;
+  document.getElementById('kc-ap').textContent=' '+k.ap;
+  document.getElementById('kc-d').textContent=k.dt;
 }
 updateClocks();setInterval(updateClocks,10000);
+
+/* WEATHER — OpenMeteo (free, no key required) */
+async function fetchWeather(){
+  try{
+    // London: 51.51, -0.13 | Paris: 48.85, 2.35
+    const [lonRes, parRes] = await Promise.all([
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=51.51&longitude=-0.13&current=temperature_2m,weathercode&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=Europe/London'),
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=48.85&longitude=2.35&current=temperature_2m,weathercode&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=Europe/Paris')
+    ]);
+    const lonData=await lonRes.json();
+    const parData=await parRes.json();
+    const wdesc=code=>{
+      if(code<=1)return['☀️','Clear'];
+      if(code<=3)return['⛅','Cloudy'];
+      if(code<=49)return['🌫','Foggy'];
+      if(code<=67)return['🌧','Rainy'];
+      if(code<=77)return['🌨','Snowy'];
+      if(code<=82)return['🌦','Showers'];
+      return['⛈','Stormy'];
+    };
+    const [li,ld]=wdesc(lonData.current.weathercode);
+    const [pi,pd]=wdesc(parData.current.weathercode);
+    const lt=Math.round(lonData.current.temperature_2m);
+    const pt=Math.round(parData.current.temperature_2m);
+    // Update London chip
+    const lonWx=document.getElementById('lon-wx');
+    lonWx.innerHTML=`<span class="chip-weather-icon">${li}</span><span class="chip-weather-temp">${lt}°F</span><span class="chip-weather-desc">${ld}</span>`;
+    document.getElementById('lon-tmp').textContent=lt+'°F';
+    document.getElementById('lon-desc').textContent=ld;
+    // Update Paris chip
+    document.getElementById('par-tmp').textContent=pt+'°F';
+    document.getElementById('par-desc').textContent=pd;
+    // Fix Paris chip weather row directly
+    const parChips=document.querySelectorAll('.live-chip');
+    parChips[1].querySelector('.chip-weather').innerHTML=`<span class="chip-weather-icon">${pi}</span><span class="chip-weather-temp">${pt}°F</span><span class="chip-weather-desc">${pd}</span>`;
+  }catch(e){
+    document.getElementById('lon-tmp').textContent='—';
+    document.getElementById('lon-desc').textContent='unavailable';
+    document.getElementById('par-tmp').textContent='—';
+    document.getElementById('par-desc').textContent='unavailable';
+  }
+}
+fetchWeather();
+
+/* EXCHANGE RATES — exchangerate-api (free tier) */
+async function fetchRates(){
+  try{
+    const res=await fetch('https://open.er-api.com/v6/latest/USD');
+    const data=await res.json();
+    if(data.result==='success'){
+      const gbp=data.rates.GBP;
+      const eur=data.rates.EUR;
+      document.getElementById('gbp-rate').textContent='£'+gbp.toFixed(4);
+      document.getElementById('gbp-sub').textContent='Live rate';
+      document.getElementById('eur-rate').textContent='€'+eur.toFixed(4);
+      document.getElementById('eur-sub').textContent='Live rate';
+    }
+  }catch(e){
+    document.getElementById('gbp-rate').textContent='£0.79';
+    document.getElementById('gbp-sub').textContent='Est. rate';
+    document.getElementById('eur-rate').textContent='€0.92';
+    document.getElementById('eur-sub').textContent='Est. rate';
+  }
+}
+fetchRates();setInterval(fetchRates,300000); // refresh every 5 min
 
 /* ACCORDION */
 function toggleDay(row){
