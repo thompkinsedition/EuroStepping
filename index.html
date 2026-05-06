@@ -400,63 +400,72 @@
   <p class="section-label">Transportation</p>
   <h2 class="section-title">Flights &amp; Transfers</h2>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.6rem">Outbound — June 27 · Lane + OG Lane · Conf: LJC80T</p>
-  <div class="flight-card">
-    <div><div class="flight-time">5:24<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City</div><div class="flight-date">Sat Jun 27</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 2123</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h</div></div>
-    <div><div class="flight-time">6:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
-    <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
-  </div>
-  <div class="flight-card">
-    <div><div class="flight-time">8:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 262</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~9h overnight</div></div>
-    <div><div class="flight-time">12:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
-    <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+  <!-- Flight group tabs -->
+  <div style="display:flex;gap:.5rem;margin-bottom:1.5rem;">
+    <button id="ftab-lane" onclick="switchFlightTab('lane')"
+      style="flex:1;padding:.75rem 1rem;border-radius:12px;border:2px solid var(--london);background:var(--london);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;">
+      ✈️ Lane + OG Lane
+    </button>
+    <button id="ftab-aj" onclick="switchFlightTab('aj')"
+      style="flex:1;padding:.75rem 1rem;border-radius:12px;border:2px solid var(--border-strong);background:white;color:var(--ink-muted);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;">
+      ✈️ Aric &amp; Jay
+    </button>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Outbound — June 27 · Aric &amp; Jay · Conf: HJ3JNO</p>
-  <div class="flight-card">
-    <div><div class="flight-time">10:05<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle</div><div class="flight-date">Sat Jun 27</div></div>
-    <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0020</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Overnight nonstop</div></div>
-    <div><div class="flight-time">3:35<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
-    <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
+  <!-- Eurostar shared note -->
+  <div style="background:var(--gold-light);border:1px solid var(--gold);border-radius:10px;padding:.65rem 1rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;font-size:13px;color:#6B4A00;">
+    <span style="font-size:18px">🚄</span>
+    <span><strong>Eurostar — all families · Jul 4 @ 12:31pm</strong> &nbsp;·&nbsp; St Pancras → Gare du Nord · Arrives 3:49pm &nbsp;·&nbsp; Lane/OG Lane: <strong>2343928</strong> &nbsp;·&nbsp; Aric &amp; Jay: <strong>J6W44N</strong></span>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">London → Paris · Eurostar — July 4</p>
-  <div class="flight-card">
-    <div><div class="flight-time">12:31<span style="font-size:.85rem">pm</span></div><div class="flight-airport">St Pancras International</div><div class="flight-date">Sat Jul 4</div></div>
-    <div class="flight-middle"><div class="flight-airline">EUROSTAR</div><div class="flight-number">Ref: 2343928</div><div class="flight-arrow"><div class="flight-arrow-line"></div>🚄<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h 18m direct</div></div>
-    <div><div class="flight-time">3:49<span style="font-size:.85rem">pm</span></div><div class="flight-airport">Gare du Nord, Paris</div><div class="flight-date">Sat Jul 4</div></div>
-    <div class="flight-meta"><span class="badge-conf">2343928</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
-  </div>
-  <div class="flight-card">
-    <div><div class="flight-time">12:31<span style="font-size:.85rem">pm</span></div><div class="flight-airport">St Pancras International</div><div class="flight-date">Sat Jul 4</div></div>
-    <div class="flight-middle"><div class="flight-airline">EUROSTAR</div><div class="flight-number">Ref: J6W44N</div><div class="flight-arrow"><div class="flight-arrow-line"></div>🚄<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h 18m direct</div></div>
-    <div><div class="flight-time">3:49<span style="font-size:.85rem">pm</span></div><div class="flight-airport">Gare du Nord, Paris</div><div class="flight-date">Sat Jul 4</div></div>
-    <div class="flight-meta"><span class="badge-conf">J6W44N</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
+  <!-- LANE + OG LANE panel -->
+  <div id="fpanel-lane">
+    <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.6rem">✈️ Outbound — June 27 · Kansas City → Denver → London · Conf: LJC80T</p>
+    <div class="flight-card">
+      <div><div class="flight-time">5:24<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City</div><div class="flight-date">Sat Jun 27</div></div>
+      <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 2123</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~2h · Leg 1</div></div>
+      <div><div class="flight-time">6:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
+      <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+    </div>
+    <div class="flight-card">
+      <div><div class="flight-time">8:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">DEN · Denver</div><div class="flight-date">Sat Jun 27</div></div>
+      <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 262</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~9h overnight</div></div>
+      <div><div class="flight-time">12:25<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
+      <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+    </div>
+    <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">🏠 Return — July 9 · Paris → Chicago → Kansas City · Conf: LJC80T</p>
+    <div class="flight-card">
+      <div><div class="flight-time">11:15<span style="font-size:.85rem">am</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 986</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~8h · Leg 1</div></div>
+      <div><div class="flight-time">1:15<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+    </div>
+    <div class="flight-card">
+      <div><div class="flight-time">3:52<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 664</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~1h 44m · Home!</div></div>
+      <div><div class="flight-time">5:36<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City 🏠</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+    </div>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Return — July 9 · Lane + OG Lane · Conf: LJC80T</p>
-  <div class="flight-card">
-    <div><div class="flight-time">11:15<span style="font-size:.85rem">am</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 986</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~8h</div></div>
-    <div><div class="flight-time">1:15<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
-  </div>
-  <div class="flight-card">
-    <div><div class="flight-time">3:52<span style="font-size:.85rem">pm</span></div><div class="flight-airport">ORD · Chicago</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-middle"><div class="flight-airline">UNITED</div><div class="flight-number">UA 664</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">~1h 44m</div></div>
-    <div><div class="flight-time">5:36<span style="font-size:.85rem">pm</span></div><div class="flight-airport">MCI · Kansas City 🏠</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-meta"><span class="badge-conf">LJC80T</span><br><span class="flight-family-tag">Lane + OG Lane</span></div>
+  <!-- ARIC & JAY panel (hidden by default) -->
+  <div id="fpanel-aj" style="display:none">
+    <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.6rem">✈️ Outbound — June 27 · Seattle → London · Conf: HJ3JNO</p>
+    <div class="flight-card">
+      <div><div class="flight-time">10:05<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle</div><div class="flight-date">Sat Jun 27</div></div>
+      <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0020</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Overnight nonstop</div></div>
+      <div><div class="flight-time">3:35<span style="font-size:.85rem">pm</span></div><div class="flight-airport">LHR · Heathrow</div><div class="flight-date">Sun Jun 28</div></div>
+      <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
+    </div>
+    <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">🏠 Return — July 9 · Paris → Seattle · Conf: HJ3JNO</p>
+    <div class="flight-card">
+      <div><div class="flight-time">4:00<span style="font-size:.85rem">pm</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0081</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Nonstop to Seattle</div></div>
+      <div><div class="flight-time">5:27<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle 🏠</div><div class="flight-date">Thu Jul 9</div></div>
+      <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
+    </div>
   </div>
 
-  <p style="font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin:.75rem 0 .6rem">Return — July 9 · Aric &amp; Jay · Conf: HJ3JNO</p>
-  <div class="flight-card">
-    <div><div class="flight-time">4:00<span style="font-size:.85rem">pm</span></div><div class="flight-airport">CDG · Paris</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-middle"><div class="flight-airline">DELTA</div><div class="flight-number">DL 0081</div><div class="flight-arrow"><div class="flight-arrow-line"></div>✈<div class="flight-arrow-line"></div></div><div class="flight-duration">Nonstop to Seattle</div></div>
-    <div><div class="flight-time">5:27<span style="font-size:.85rem">pm</span></div><div class="flight-airport">SEA · Seattle 🏠</div><div class="flight-date">Thu Jul 9</div></div>
-    <div class="flight-meta"><span class="badge-conf">HJ3JNO</span><br><span class="flight-family-tag">Aric &amp; Jay</span></div>
-  </div>
 </div></section>
 
 <!-- ═══ ACCORDION DAILY AGENDA ═══ -->
@@ -1338,6 +1347,30 @@ function toggleDay(row){
   const isOpen=row.classList.contains('open');
   row.classList.toggle('open',!isOpen);
   panel.classList.toggle('open',!isOpen);
+}
+
+/* FLIGHT TABS */
+function switchFlightTab(group){
+  const isLane = group === 'lane';
+  document.getElementById('fpanel-lane').style.display = isLane ? 'block' : 'none';
+  document.getElementById('fpanel-aj').style.display   = isLane ? 'none'  : 'block';
+  const laneBtn = document.getElementById('ftab-lane');
+  const ajBtn   = document.getElementById('ftab-aj');
+  if(isLane){
+    laneBtn.style.background = 'var(--london)';
+    laneBtn.style.color      = 'white';
+    laneBtn.style.borderColor= 'var(--london)';
+    ajBtn.style.background   = 'white';
+    ajBtn.style.color        = 'var(--ink-muted)';
+    ajBtn.style.borderColor  = 'var(--border-strong)';
+  } else {
+    ajBtn.style.background   = 'var(--paris)';
+    ajBtn.style.color        = 'white';
+    ajBtn.style.borderColor  = 'var(--paris)';
+    laneBtn.style.background = 'white';
+    laneBtn.style.color      = 'var(--ink-muted)';
+    laneBtn.style.borderColor= 'var(--border-strong)';
+  }
 }
 
 /* TO-DO */
