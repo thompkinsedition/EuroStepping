@@ -214,7 +214,156 @@
   .note-list li:last-child{border-bottom:none;}
   .note-list li::before{content:'→ ';color:var(--gold);}
 
-  /* ── WIMBLEDON BRIEF CARD ── */
+  /* ── EIFFEL TOWER BRIEF CARD ── */
+  .eiffel-card {
+    background: linear-gradient(135deg, #1a1f3a 0%, #2d1f3a 100%);
+    border-radius: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .eiffel-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .eiffel-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eiffel-badge {
+    background: var(--paris);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .eiffel-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+  }
+  .eiffel-chevron {
+    font-size: 11px;
+    color: rgba(255,255,255,.5);
+    transition: transform .25s;
+  }
+  .eiffel-card.open .eiffel-chevron { transform: rotate(180deg); }
+  .eiffel-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+  }
+  .eiffel-card.open .eiffel-body { max-height: 2000px; }
+  .eiffel-body-inner {
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+  }
+  .eiffel-option {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+  }
+  .eiffel-option-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .eiffel-option-num {
+    background: var(--paris);
+    color: white;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .eiffel-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .eiffel-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-size: 12px;
+    color: rgba(255,255,255,.8);
+    line-height: 1.5;
+  }
+  .eiffel-step-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--paris-light);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .eiffel-note {
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+    font-style: italic;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+  .eiffel-divider { height: 1px; background: rgba(255,255,255,.08); }
+  .eiffel-tip {
+    background: rgba(201,151,58,.15);
+    border: 1px solid rgba(201,151,58,.3);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+  }
+  .eiffel-tip-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  .eiffel-tip-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .eiffel-tip-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,.8);
+    line-height: 1.5;
+  }
+  .eiffel-tip-step-num {
+    background: rgba(201,151,58,.4);
+    color: var(--gold);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .eiffel-link {
+    color: var(--paris-light);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+  }
   .wim-card {
     background: #1a3d2b;
     border-radius: 12px;
@@ -935,7 +1084,7 @@
                     <span class="wim-icon">🎡</span>
                     <div>
                       <strong>Murray Mound (Henman Hill)</strong>
-                      <span>The big outdoor screen on the hill — great for families, picnic vibe, free to sit on. Perfect if Joey &amp; Evie need a break from sitting still. Everyone watches on the giant screen together.</span>
+                      <span>The big outdoor screen on the hill — brilliant picnic vibe, free to sit on. Grab strawberries &amp; cream and a Pimm's and watch Centre Court live on the giant screen. A Wimbledon institution.</span>
                     </div>
                   </div>
 
@@ -969,7 +1118,6 @@
                         <span class="wim-pill do">Sunscreen</span>
                         <span class="wim-pill do">Light raincoat</span>
                         <span class="wim-pill do">Contactless card</span>
-                        <span class="wim-pill do">Snacks for kids</span>
                         <span class="wim-pill do">Small picnic</span>
                         <span class="wim-pill do">Phone charger</span>
                         <span class="wim-pill do">Wimbledon app</span>
@@ -1129,24 +1277,95 @@
       </div>
     </div>
 
-    <!-- Jul 6 MACARON + SEINE -->
+    <!-- Jul 6 EIFFEL + MACARON + SEINE -->
     <div class="day-row paris-day" onclick="toggleDay(this)">
       <div class="day-badge paris-badge"><span class="month">Jul</span><span class="date">6</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Macaron Class &amp; Seine Sunset Cruise 🥐🛳</div>
-        <div class="day-tags"><span class="day-tag tag-booked">Macaron ✓ 2pm</span><span class="day-tag tag-booked">Cruise ✓ 9:15pm</span></div>
+        <div class="day-title">Eiffel Tower Summit, Macaron Class &amp; Seine Cruise 🗼🥐🛳</div>
+        <div class="day-tags">
+          <span class="day-tag tag-activity">Eiffel Summit</span>
+          <span class="day-tag tag-booked">Macaron ✓ 2pm</span>
+          <span class="day-tag tag-booked">Cruise ✓ 9:15pm</span>
+        </div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
     <div class="day-panel">
       <div class="day-panel-inner">
+
+        <!-- Eiffel Tower -->
         <div class="event-row">
           <div class="event-time">Morning</div>
           <div class="event-body">
-            <div class="event-title">Free Morning — Explore &amp; Eiffel Tower?</div>
-            <div class="event-desc">The Airbnb at 75015 is about a 10 min walk to the Eiffel Tower · Great morning to pop by for photos or book summit tickets · Champ de Mars picnic area is right there</div>
+            <div class="event-title">Eiffel Tower Summit 🗼</div>
+            <div class="event-desc">The Airbnb at 75015 is ~10 min walk to the tower · Plan your visit using the strategy guide below — summit tickets sell out fast, so read this before you go</div>
+
+            <!-- Eiffel Tower Brief Card -->
+            <div class="eiffel-card" id="eiffel-brief" onclick="toggleEiffel()">
+              <div class="eiffel-card-header">
+                <div class="eiffel-card-header-left">
+                  <span class="eiffel-badge">🗼 Summit Strategy</span>
+                  <span class="eiffel-card-title">How to Get to the Top</span>
+                </div>
+                <span class="eiffel-chevron">▾</span>
+              </div>
+              <div class="eiffel-body">
+                <div class="eiffel-body-inner">
+
+                  <div class="eiffel-option">
+                    <div class="eiffel-option-title">
+                      <span class="eiffel-option-num">1</span>
+                      Option 1 — Early Morning (Highest Probability)
+                    </div>
+                    <div class="eiffel-steps">
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>Arrive at the Eiffel Tower security area 45–60 minutes before opening</div>
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>Go directly to the ticket booth that sells elevator tickets</div>
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>Have everyone in your party present</div>
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>If summit tickets are available, buy them immediately — don't wait to decide on a time</div>
+                    </div>
+                    <div class="eiffel-note">With a 4- and 7-year-old, this is probably the least stressful approach.</div>
+                  </div>
+
+                  <div class="eiffel-option">
+                    <div class="eiffel-option-title">
+                      <span class="eiffel-option-num">2</span>
+                      Option 2 — Evening Backup
+                    </div>
+                    <div class="eiffel-steps">
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>If you don't get summit tickets in the morning, return around 8:00–9:00 PM</div>
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>Crowds often start thinning and additional summit capacity may become available</div>
+                      <div class="eiffel-step"><div class="eiffel-step-dot"></div>The view is spectacular — Paris stays light late into the evening in early July, and you'll also see the city transition into nighttime</div>
+                    </div>
+                  </div>
+
+                  <div class="eiffel-divider"></div>
+
+                  <div class="eiffel-option">
+                    <div class="eiffel-option-title" style="margin-bottom:.35rem">📲 Keep Checking Online</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6">Start checking the official Eiffel Tower site (<a href="https://www.toureiffel.paris" target="_blank" class="eiffel-link">toureiffel.paris ↗</a>) several times a day about 1–2 weeks before your trip. Additional inventory and cancellations do sometimes appear.</div>
+                  </div>
+
+                  <div class="eiffel-divider"></div>
+
+                  <div class="eiffel-tip">
+                    <div class="eiffel-tip-title">💛 Family Tip — Evening Visit Is Actually Better</div>
+                    <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:.6rem">For kids your daughters' ages, the evening visit is worth trying to manage around the schedule. In early July, sunset is around 9:50 PM in Paris, so you can:</div>
+                    <div class="eiffel-tip-steps">
+                      <div class="eiffel-tip-step"><div class="eiffel-tip-step-num">1</div>Have dinner nearby</div>
+                      <div class="eiffel-tip-step"><div class="eiffel-tip-step-num">2</div>Go up the tower in the evening</div>
+                      <div class="eiffel-tip-step"><div class="eiffel-tip-step-num">3</div>Watch Paris light up as the sun sets</div>
+                      <div class="eiffel-tip-step"><div class="eiffel-tip-step-num">4</div>Potentially catch the tower's sparkling lights afterward</div>
+                    </div>
+                    <div class="eiffel-note" style="margin-top:8px">And conveniently — your Seine cruise is already booked at 9:15 PM, so the Eiffel Tower sparkling from the water at night is already on the agenda! An evening summit earlier that day would flow perfectly into it.</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Macaron -->
         <div class="event-row">
           <div class="event-time">2:00 pm</div>
           <div class="event-body">
@@ -1155,14 +1374,17 @@
             <span class="event-who">Lane family girls</span>
           </div>
         </div>
+
+        <!-- Seine Cruise -->
         <div class="event-row">
           <div class="event-time">9:15 pm</div>
           <div class="event-body">
             <div class="event-title">Seine Sunset Cruise ✅ — Viator</div>
-            <div class="event-desc">€38 pp · 8 people · Bateaux Mouches or Vendettes du Pont Neuf · The Eiffel Tower sparkles every hour on the hour after dark — absolute highlight!</div>
+            <div class="event-desc">€38 pp · 8 people · The Eiffel Tower sparkles every hour on the hour after dark — absolute highlight of the trip!</div>
             <span class="event-conf">Viator Conf: 1772569543</span>&nbsp;<span class="event-who">All 3 families</span>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -1621,6 +1843,13 @@ function toggleDay(row){
   const isOpen=row.classList.contains('open');
   row.classList.toggle('open',!isOpen);
   panel.classList.toggle('open',!isOpen);
+}
+
+/* EIFFEL TOWER BRIEF */
+function toggleEiffel(){
+  event.stopPropagation();
+  const card=document.getElementById('eiffel-brief');
+  card.classList.toggle('open');
 }
 
 /* WIMBLEDON BRIEF */
