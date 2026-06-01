@@ -214,6 +214,105 @@
   .note-list li:last-child{border-bottom:none;}
   .note-list li::before{content:'→ ';color:var(--gold);}
 
+  /* ── WIMBLEDON BRIEF CARD ── */
+  .wim-card {
+    background: #1a3d2b;
+    border-radius: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .wim-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .wim-card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wim-badge {
+    background: #4CAF50;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .wim-card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+  }
+  .wim-chevron {
+    font-size: 11px;
+    color: rgba(255,255,255,.5);
+    transition: transform .25s;
+  }
+  .wim-card.open .wim-chevron { transform: rotate(180deg); }
+  .wim-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+  }
+  .wim-card.open .wim-body { max-height: 1200px; }
+  .wim-body-inner {
+    padding: 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .wim-divider { height: 1px; background: rgba(255,255,255,.1); margin: .25rem 0; }
+  .wim-row {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 8px;
+    align-items: start;
+    font-size: 13px;
+    color: rgba(255,255,255,.85);
+    line-height: 1.5;
+  }
+  .wim-icon { font-size: 15px; margin-top: 1px; }
+  .wim-row strong { color: white; display: block; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 1px; }
+  .wim-row span { color: rgba(255,255,255,.7); font-size: 12px; }
+  .wim-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .wim-step {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,.75);
+  }
+  .wim-step-num {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 700; color: white;
+    flex-shrink: 0;
+  }
+  .wim-pill-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+  .wim-pill {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    padding: 2px 9px;
+    font-size: 11px;
+    color: rgba(255,255,255,.8);
+  }
+  .wim-pill.do { background: rgba(76,175,80,.25); border-color: rgba(76,175,80,.4); }
+  .wim-pill.dont { background: rgba(244,67,54,.2); border-color: rgba(244,67,54,.35); }
+
   footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:2rem;font-size:12px;}
   footer strong{color:var(--gold);font-weight:400;}
 
@@ -718,37 +817,212 @@
       </div>
     </div>
 
-    <!-- Jul 3 FREE -->
+    <!-- Jul 3 WIMBLEDON -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jul</span><span class="date">3</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Free Day — Last Full Day in London</div>
-        <div class="day-tags"><span class="day-tag tag-free">Flexible</span><span class="day-tag tag-travel">Pack for Paris</span><span class="day-tag tag-pending">Sky Garden — Emily</span></div>
+        <div class="day-title">Wimbledon — Day 5 of The Championships 🎾</div>
+        <div class="day-tags">
+          <span class="day-tag tag-booked">3rd Round Singles</span>
+          <span class="day-tag tag-activity">All England Club</span>
+          <span class="day-tag tag-travel">Pack for Paris Tonight</span>
+        </div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
     <div class="day-panel">
       <div class="day-panel-inner">
+
+        <!-- Getting there -->
         <div class="event-row">
-          <div class="event-time">All day</div>
+          <div class="event-time">Depart<br>~8:45am</div>
           <div class="event-body">
-            <div class="event-title">Anything Still on the Wishlist</div>
-            <div class="event-desc">
-              🌿 <strong>Sky Garden</strong> — free rooftop garden/bar with panoramic views (Emily to book — available 3 weeks before)<br>
-              🧸 <strong>Hamleys</strong> — 7-floor toy store on Regent Street<br>
-              🛍 <strong>Harrods</strong> — Knightsbridge legendary department store<br>
-              🌿 <strong>Kensington Gardens</strong> — Princess Di Park, great for the kids<br>
-              ☕ <strong>Portobello Road</strong> — antiques, street food, great vibe
+            <div class="event-title">Getting There — District Line from Paddington</div>
+            <div class="event-desc">Leave the Airbnb by 8:45am to arrive before gates open at 10am · Allow extra time — it gets busy fast on tournament days</div>
+            <div class="wim-steps" style="margin-top:8px">
+              <div class="wim-step"><div class="wim-step-num">1</div>Walk ~5 min from Airbnb to Paddington station (W2)</div>
+              <div class="wim-step"><div class="wim-step-num">2</div>Take the <strong>District line</strong> westbound toward Wimbledon · board at Paddington</div>
+              <div class="wim-step"><div class="wim-step-num">3</div>Ride to <strong>Southfields</strong> station · ~35 min · no changes needed</div>
+              <div class="wim-step"><div class="wim-step-num">4</div>Walk ~18 min from Southfields to the All England Club gates · or grab a taxi at the station</div>
+            </div>
+            <div class="event-note" style="margin-top:6px">💡 Pay with contactless card or phone — no Oyster card needed. Check trains are going to Wimbledon, not terminating early at Parsons Green.</div>
+          </div>
+        </div>
+
+        <!-- Timing -->
+        <div class="event-row">
+          <div class="event-time">Key<br>Times</div>
+          <div class="event-body">
+            <div class="event-title">Schedule at the All England Club</div>
+            <div class="event-desc" style="display:grid;grid-template-columns:90px 1fr;gap:4px 12px;margin-top:4px">
+              <span style="font-weight:600;color:var(--ink)">10:00 am</span><span>Gates open — arrive around now for best access</span>
+              <span style="font-weight:600;color:var(--ink)">11:00 am</span><span>Outside courts begin — lots of tennis from the start</span>
+              <span style="font-weight:600;color:var(--ink)">1:00 pm</span><span>Centre Court &amp; No.1 Court matches start</span>
+              <span style="font-weight:600;color:var(--ink)">1:30 pm</span><span>Featured matches typically begin on Centre Court</span>
+              <span style="font-weight:600;color:var(--ink)">After 3pm</span><span>Ticket resale kiosk opens — Centre Court returns available</span>
+              <span style="font-weight:600;color:var(--ink)">Day 5</span><span>3rd Round — Men's &amp; Ladies' Singles · best players still in</span>
+            </div>
+            <div class="event-note">The final Order of Play is published the night before on wimbledon.com and the Wimbledon app — check it the evening of Jul 2 to see who's on Centre Court.</div>
+          </div>
+        </div>
+
+        <!-- Wimbledon Brief Card -->
+        <div class="event-row">
+          <div class="event-time">Day<br>Guide</div>
+          <div class="event-body">
+            <div class="event-title">Wimbledon Day Brief</div>
+            <div class="event-desc">Everything you need for the day — tap to expand</div>
+
+            <div class="wim-card" id="wim-brief" onclick="toggleWim()">
+              <div class="wim-card-header">
+                <div class="wim-card-header-left">
+                  <span class="wim-badge">🎾 Wimbledon</span>
+                  <span class="wim-card-title">Day 5 · 3rd Round · July 3, 2026</span>
+                </div>
+                <span class="wim-chevron">▾</span>
+              </div>
+              <div class="wim-body">
+                <div class="wim-body-inner">
+
+                  <div class="wim-row">
+                    <span class="wim-icon">📍</span>
+                    <div><strong>Where</strong><span>All England Lawn Tennis Club, Church Rd, Wimbledon SW19 5AG</span></div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🚇</span>
+                    <div>
+                      <strong>Getting There</strong>
+                      <span>District line from Paddington → Southfields (~35 min) · then 18 min walk or taxi · Pay by contactless · No driving — roads are packed</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">⏰</span>
+                    <div>
+                      <strong>Times</strong>
+                      <span>Gates: 10am · Outside courts: 11am · Centre Court &amp; No.1: 1pm–1:30pm · Check Order of Play the night before at wimbledon.com</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🎟</span>
+                    <div>
+                      <strong>Your Day 5 Ticket</strong>
+                      <span>Day 5 = 3rd Round of Men's &amp; Ladies' Singles — top seeds still competing, big names on court. Check the Wimbledon app for who's playing where once the Order of Play drops on the evening of Jul 2.</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🍓</span>
+                    <div>
+                      <strong>Food &amp; Drink</strong>
+                      <span>Strawberries &amp; cream (~£3.50 a portion) — a Wimbledon must · Pimm's is the unofficial drink of the tournament · You can bring your own food and soft drinks · Hard-sided containers (cool boxes, thermos flasks over 500ml) not allowed · Brasserie, seafood bar, sausage grill all on site</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🎡</span>
+                    <div>
+                      <strong>Murray Mound (Henman Hill)</strong>
+                      <span>The big outdoor screen on the hill — great for families, picnic vibe, free to sit on. Perfect if Joey &amp; Evie need a break from sitting still. Everyone watches on the giant screen together.</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🎒</span>
+                    <div>
+                      <strong>Bag Rules</strong>
+                      <span>Max 1 bag per person · No bigger than 40×30×30cm (roughly a small rucksack) · Will be screened at the gate · No hard-sided containers, no selfie sticks, no large flags</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🌦</span>
+                    <div>
+                      <strong>Weather</strong>
+                      <span>London in early July = unpredictable. Bring a light waterproof layer regardless of the forecast. Centre Court and No.1 Court have retractable roofs — play continues in rain on those courts.</span>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">✅</span>
+                    <div>
+                      <strong>Bring</strong>
+                      <div class="wim-pill-row">
+                        <span class="wim-pill do">Sunscreen</span>
+                        <span class="wim-pill do">Light raincoat</span>
+                        <span class="wim-pill do">Contactless card</span>
+                        <span class="wim-pill do">Snacks for kids</span>
+                        <span class="wim-pill do">Small picnic</span>
+                        <span class="wim-pill do">Phone charger</span>
+                        <span class="wim-pill do">Wimbledon app</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wim-row" style="margin-top:4px">
+                    <span class="wim-icon">🚫</span>
+                    <div>
+                      <strong>Leave at Home</strong>
+                      <div class="wim-pill-row">
+                        <span class="wim-pill dont">Selfie sticks</span>
+                        <span class="wim-pill dont">Cool boxes</span>
+                        <span class="wim-pill dont">Oversized bags</span>
+                        <span class="wim-pill dont">Spirits/fortified wine</span>
+                        <span class="wim-pill dont">Tripods</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="wim-divider"></div>
+
+                  <div class="wim-row">
+                    <span class="wim-icon">🔗</span>
+                    <div>
+                      <strong>Useful Links</strong>
+                      <span>
+                        <a href="https://www.wimbledon.com/en_GB/atoz/order_of_play.html" target="_blank" style="color:#81C784;text-decoration:none">Order of Play ↗</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://www.wimbledon.com/en_GB/visit/gettinghere.html" target="_blank" style="color:#81C784;text-decoration:none">Getting Here ↗</a>
+                        &nbsp;·&nbsp;
+                        <a href="https://www.wimbledon.com/en_GB/visit/mobileapp.html" target="_blank" style="color:#81C784;text-decoration:none">Wimbledon App ↗</a>
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Evening -->
         <div class="event-row">
           <div class="event-time">Evening</div>
           <div class="event-body">
             <div class="event-title">Pack &amp; Prep for Eurostar Tomorrow</div>
             <div class="event-desc">Eurostar departs 12:31 pm Saturday · St Pancras is ~30 min from W2 · Arrive at least 45 min early · Check out of Airbnb in the morning</div>
+            <div class="event-note">Great day to pack — tired kids + big day + early checkout tomorrow. Get to bed early!</div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -1347,6 +1621,13 @@ function toggleDay(row){
   const isOpen=row.classList.contains('open');
   row.classList.toggle('open',!isOpen);
   panel.classList.toggle('open',!isOpen);
+}
+
+/* WIMBLEDON BRIEF */
+function toggleWim(){
+  event.stopPropagation();
+  const card=document.getElementById('wim-brief');
+  card.classList.toggle('open');
 }
 
 /* FLIGHT TABS */
