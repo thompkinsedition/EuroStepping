@@ -214,6 +214,81 @@
   .note-list li:last-child{border-bottom:none;}
   .note-list li::before{content:'→ ';color:var(--gold);}
 
+  /* ── TUBE ROUTE CARD ── */
+  .tube-card {
+    background: #1c2b1c;
+    border-radius: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .tube-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .tube-card-header-left { display: flex; align-items: center; gap: 10px; }
+  .tube-badge {
+    background: #1A6B1A;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+  }
+  .tube-card-title { font-size: 13px; font-weight: 500; color: white; }
+  .tube-chevron { font-size: 11px; color: rgba(255,255,255,.5); transition: transform .25s; }
+  .tube-card.open .tube-chevron { transform: rotate(180deg); }
+  .tube-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .tube-card.open .tube-body { max-height: 1000px; }
+  .tube-body-inner { padding: 0 1rem 1rem; display: flex; flex-direction: column; gap: .6rem; }
+  .tube-summary {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px;
+    padding: .6rem .85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .4rem;
+  }
+  .tube-summary-stat { text-align: center; }
+  .tube-summary-num { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: white; line-height: 1; }
+  .tube-summary-lbl { font-size: 10px; color: rgba(255,255,255,.45); letter-spacing: .06em; text-transform: uppercase; margin-top: 2px; }
+  .tube-summary-div { width: 1px; height: 36px; background: rgba(255,255,255,.1); }
+  .tube-steps-wrap { display: flex; flex-direction: column; gap: 2px; }
+  .tube-step {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 8px;
+    align-items: start;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .tube-step:last-child { border-bottom: none; }
+  .tube-step-icon { font-size: 14px; margin-top: 1px; }
+  .tube-step-text { font-size: 12px; color: rgba(255,255,255,.8); line-height: 1.5; }
+  .tube-step-text strong { color: white; font-weight: 600; }
+  .tube-line-pill {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    color: white;
+    vertical-align: middle;
+    margin: 0 2px;
+  }
+  .line-bakerloo { background: #B36305; }
+  .line-circle   { background: #FFD300; color: #000; }
+  .tube-tip { font-size: 11px; color: rgba(255,255,255,.45); font-style: italic; margin-top: 4px; line-height: 1.5; }
+
   /* ── EIFFEL TOWER BRIEF CARD ── */
   .eiffel-card {
     background: linear-gradient(135deg, #1a1f3a 0%, #2d1f3a 100%);
@@ -854,32 +929,116 @@
       </div>
     </div>
 
-    <!-- Jun 30 TOWER + MUSEUMS -->
+    <!-- Jun 30 TOWER + SKY GARDEN -->
     <div class="day-row london-day" onclick="toggleDay(this)">
       <div class="day-badge london-badge"><span class="month">Jun</span><span class="date">30</span></div>
       <div class="day-title-wrap">
-        <div class="day-title">Tower of London &amp; Natural History Museum</div>
-        <div class="day-tags"><span class="day-tag tag-activity">Historic</span><span class="day-tag tag-kids">Great for Kids</span><span class="day-tag tag-pending">Wimbledon? — David</span></div>
+        <div class="day-title">Tower of London &amp; Sky Garden 🏰🌿</div>
+        <div class="day-tags">
+          <span class="day-tag tag-booked">Tower ✓ 2:30pm</span>
+          <span class="day-tag tag-booked">Sky Garden ✓ 5pm</span>
+          <span class="day-tag tag-activity">Historic + Views</span>
+        </div>
       </div>
       <div class="day-chevron">▾</div>
     </div>
     <div class="day-panel">
       <div class="day-panel-inner">
+
+        <!-- Morning free time -->
         <div class="event-row">
           <div class="event-time">Morning</div>
           <div class="event-body">
-            <div class="event-title">Tower of London (Tentative)</div>
-            <div class="event-desc">Crown Jewels, Beefeater guards, medieval towers · Book in advance · Allow 2–3 hours</div>
-            <div class="event-note">Wimbledon is this week — David is checking ticket availability as an alternative</div>
+            <div class="event-title">Free Morning — Explore Near the Airbnb</div>
+            <div class="event-desc">Tower tour isn't until 2:30pm so a relaxed morning — walk along the canal in Little Venice, grab breakfast locally, or visit Kensington Gardens (Princess Di Park) which is a short trip from W2</div>
           </div>
         </div>
+
+        <!-- Travel to Tower -->
         <div class="event-row">
-          <div class="event-time">Afternoon</div>
+          <div class="event-time">~1:30 pm</div>
           <div class="event-body">
-            <div class="event-title">Natural History Museum (Tentative)</div>
-            <div class="event-desc">Free entry · Dinosaur hall, blue whale, geology galleries · South Kensington · Also walk through Kensington Gardens (Princess Di Park) nearby</div>
+            <div class="event-title">Head to Tower of London via Tube</div>
+            <div class="event-desc">Leave by 1:30pm to arrive comfortably before your 2:30pm tour · ~34 min journey · See route below</div>
+
+            <!-- Tube Route Card -->
+            <div class="tube-card" id="tube-tower" onclick="toggleTube('tube-tower')">
+              <div class="tube-card-header">
+                <div class="tube-card-header-left">
+                  <span class="tube-badge">🚇 Tube Route</span>
+                  <span class="tube-card-title">Little Venice → Tower of London</span>
+                </div>
+                <span class="tube-chevron">▾</span>
+              </div>
+              <div class="tube-body">
+                <div class="tube-body-inner">
+
+                  <div class="tube-summary">
+                    <div class="tube-summary-stat"><div class="tube-summary-num">~34</div><div class="tube-summary-lbl">Minutes</div></div>
+                    <div class="tube-summary-div"></div>
+                    <div class="tube-summary-stat"><div class="tube-summary-num">1</div><div class="tube-summary-lbl">Change</div></div>
+                    <div class="tube-summary-div"></div>
+                    <div class="tube-summary-stat"><div class="tube-summary-num">£3–5</div><div class="tube-summary-lbl">Contactless</div></div>
+                    <div class="tube-summary-div"></div>
+                    <div class="tube-summary-stat"><div class="tube-summary-num">Every<br style="line-height:.8"> 10 min</div><div class="tube-summary-lbl">Frequency</div></div>
+                  </div>
+
+                  <div class="tube-steps-wrap">
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🚶</div>
+                      <div class="tube-step-text"><strong>Walk ~5 min</strong> from the Airbnb to <strong>Warwick Avenue station</strong></div>
+                    </div>
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🟤</div>
+                      <div class="tube-step-text">Board the <span class="tube-line-pill line-bakerloo">Bakerloo</span> line <strong>southbound toward Elephant &amp; Castle</strong> · Ride <strong>1 stop</strong> to <strong>Paddington</strong></div>
+                    </div>
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🔄</div>
+                      <div class="tube-step-text"><strong>Change at Paddington</strong> — follow signs for the <span class="tube-line-pill line-circle">Circle</span> line · Platform for <strong>eastbound / Hammersmith &amp; City</strong> trains</div>
+                    </div>
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🟡</div>
+                      <div class="tube-step-text">Board the <span class="tube-line-pill line-circle">Circle</span> line <strong>eastbound toward Aldgate</strong> · Ride through Edgware Road → Baker Street → King's Cross → Farringdon → Moorgate → Liverpool Street → Aldgate → <strong>Tower Hill</strong> · About <strong>24 min</strong></div>
+                    </div>
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🚶</div>
+                      <div class="tube-step-text"><strong>Exit at Tower Hill</strong> · Walk <strong>3 min</strong> — the Tower of London is right in front of you as you exit</div>
+                    </div>
+                    <div class="tube-step">
+                      <div class="tube-step-icon">🏰</div>
+                      <div class="tube-step-text">Arrive at <strong>Tower of London main entrance</strong> · Head in for your 2:30pm tour</div>
+                    </div>
+                  </div>
+
+                  <div class="tube-tip">💡 Pay with contactless card or phone — no Oyster card needed · Zones 1 &amp; 2 · Tower Hill station is step-free accessible</div>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <!-- Tower tour -->
+        <div class="event-row">
+          <div class="event-time">2:30 pm</div>
+          <div class="event-body">
+            <div class="event-title">Tower of London — Guided Tour ✅</div>
+            <div class="event-desc">Crown Jewels, Beefeater Yeoman Warder guides, White Tower, medieval walls &amp; towers · Allow ~2 hours · HM Tower of London, London EC3N 4AB</div>
+            <div class="event-note">Tip: the famous ravens are usually most visible in the morning and late afternoon — keep an eye out as you're leaving</div>
+          </div>
+        </div>
+
+        <!-- Sky Garden -->
+        <div class="event-row">
+          <div class="event-time">5:00 pm</div>
+          <div class="event-body">
+            <div class="event-title">Sky Garden ✅ — Fenchurch Street</div>
+            <div class="event-desc">20 Fenchurch St (the "Walkie Talkie" building) · Free rooftop garden &amp; bar on the 35th floor with 360° panoramic views of London · Only a 10 min walk from the Tower of London — perfect flow for the day</div>
+            <span class="event-conf">Reservation confirmed · 5:00 PM</span>
+            <div class="event-note">💡 Walk east from Tower Hill along the Thames path to Fenchurch St — a beautiful riverside stretch. Great view of Tower Bridge from this direction too.</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1267,6 +1426,14 @@
           </div>
         </div>
         <div class="event-row">
+          <div class="event-time">Afternoon</div>
+          <div class="event-body">
+            <div class="event-title">Hang with Fred &amp; Mounir 🤝</div>
+            <div class="event-desc">Lane family of 4 spending time with Fred &amp; Mounir in Paris</div>
+            <span class="event-who">Lane family (4)</span>
+          </div>
+        </div>
+        <div class="event-row">
           <div class="event-time">~6:00 pm</div>
           <div class="event-body">
             <div class="event-title">Mass at Notre-Dame Cathedral (Aric &amp; Jay + OG Lanes)</div>
@@ -1622,9 +1789,9 @@
     <div class="todo-column">
       <h3>🇬🇧 London</h3>
       <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Sky Garden tickets (Emily) — only available 3 weeks before</div><div class="todo-dl">⚠ Available from ~June 12 — free but must pre-book</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Sky Garden tickets (Jun 30 @ 5pm)</div><div class="todo-dl">✓ Reserved · Emily</div></div></div>
         <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Decide on Wimbledon (David) — check ticket availability for Jun 30</div><div class="todo-dl">Wimbledon runs June 29–July 12, 2026</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Tower of London tickets (tentative Jun 30)</div><div class="todo-dl">Book in advance to skip queues</div></div></div>
+        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Tower of London tour (Jun 30 @ 2:30pm)</div><div class="todo-dl">✓ Booked</div></div></div>
         <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Fortnum &amp; Mason Afternoon Tea (Jun 29 @ 1:15pm, 8 people)</div><div class="todo-dl">✓ Conf: 8YGDFJ3WXKWC · Under Aric Lane</div></div></div>
         <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Dishoom dinner (Jul 1 @ 4:45pm, 8 people)</div><div class="todo-dl">✓ Conf: 8N4AFF47XH5A · Under Aric Lane</div></div></div>
         <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">J Sheekey oysters pre-theatre (Jul 2 @ 4:15pm)</div><div class="todo-dl">✓ Conf: #2110244649 · Aric &amp; Jay</div></div></div>
@@ -1843,6 +2010,12 @@ function toggleDay(row){
   const isOpen=row.classList.contains('open');
   row.classList.toggle('open',!isOpen);
   panel.classList.toggle('open',!isOpen);
+}
+
+/* TUBE ROUTE CARD */
+function toggleTube(id){
+  event.stopPropagation();
+  document.getElementById(id).classList.toggle('open');
 }
 
 /* EIFFEL TOWER BRIEF */
