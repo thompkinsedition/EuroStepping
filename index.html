@@ -190,21 +190,6 @@
   .restaurant-time{font-weight:500;}
   .restaurant-who{font-size:11px;color:var(--ink-faint);margin-top:5px;}
 
-  /* ── TO-DO ── */
-  .todo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;}
-  .todo-column h3{font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.8rem;}
-  .todo-items{display:flex;flex-direction:column;gap:.5rem;}
-  .todo-item{display:flex;align-items:flex-start;gap:10px;background:white;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;cursor:pointer;transition:opacity .2s;}
-  .todo-item.done{opacity:.5;}
-  .todo-item.done .todo-text{text-decoration:line-through;}
-  .todo-check{width:18px;height:18px;border-radius:50%;border:2px solid var(--border-strong);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s;font-size:10px;color:white;}
-  .todo-item.done .todo-check{background:var(--success);border-color:var(--success);}
-  .todo-item.done .todo-check::after{content:'✓';}
-  .todo-text{font-size:14px;flex:1;}
-  .todo-dl{font-size:11px;color:var(--ink-faint);margin-top:2px;}
-  .todo-urgent .todo-dl{color:#C0392B;}
-  .todo-urgent{border-left:3px solid #E74C3C;}
-
   /* ── NOTES ── */
   .notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
   .note-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.4rem;}
@@ -1823,63 +1808,7 @@
   </div>
 </div></section>
 
-<!-- ═══ TO-DO ═══ -->
-<section><div class="container">
-  <p class="section-label">Action Items</p>
-  <h2 class="section-title">Things Still To Do</h2>
-  <div class="todo-grid">
 
-    <div class="todo-column">
-      <h3>🇬🇧 London</h3>
-      <div class="todo-items">
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Sky Garden tickets (Jun 30 @ 5pm)</div><div class="todo-dl">✓ Reserved · Emily</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Decide on Wimbledon (David) — check ticket availability for Jun 30</div><div class="todo-dl">Wimbledon runs June 29–July 12, 2026</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Tower of London tour (Jun 30 @ 2:30pm)</div><div class="todo-dl">✓ Booked</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Fortnum &amp; Mason Afternoon Tea (Jun 29 @ 1:15pm, 8 people)</div><div class="todo-dl">✓ Conf: 8YGDFJ3WXKWC · Under Aric Lane</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Dishoom dinner (Jul 1 @ 4:45pm, 8 people)</div><div class="todo-dl">✓ Conf: 8N4AFF47XH5A · Under Aric Lane</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">J Sheekey oysters pre-theatre (Jul 2 @ 4:15pm)</div><div class="todo-dl">✓ Conf: #2110244649 · Aric &amp; Jay</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Oh Mary! at Trafalgar Theatre (Jul 2 @ 5:30pm)</div><div class="todo-dl">✓ Aric &amp; Jay</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Bancone post-theatre dinner (Jul 2 @ 7:45pm)</div><div class="todo-dl">✓ Conf: 8YEZWK4NLR8H · Aric &amp; Jay</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Charlie &amp; The Chocolate Factory Tea (Jul 2 @ 3pm)</div><div class="todo-dl">✓ Lane family girls</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paddington the Musical (Jul 2 @ 7pm)</div><div class="todo-dl">✓ Lane family of 4</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">London Airbnb — 14 Westbourne Terrace Road W2</div><div class="todo-dl">✓ Conf: HMDJRKTX8E</div></div></div>
-      </div>
-    </div>
-
-    <div class="todo-column">
-      <h3>🇫🇷 Paris</h3>
-      <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Make Paris restaurant reservations — none booked yet beyond Jul 4 dinner</div><div class="todo-dl">⚠ Kid-friendly spots &amp; others book up fast</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Eiffel Tower summit tickets (Jul 6 morning)</div><div class="todo-dl">Sells out weeks ahead — toureiffel.paris</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Look into Notre-Dame guided tours (Jul 8)</div><div class="todo-dl">Fully restored — tours available again</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Book Musée d'Orsay tickets for Jul 7 or 8</div><div class="todo-dl">Closed Mondays · Book timed entry in advance</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Confirm Aric &amp; Jay joining Louvre (Jul 8) — update ticket count if needed</div><div class="todo-dl">Currently booked for 6 (Lane + OG Lane)</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Le Bouchon Parisien (Jul 4 @ 7pm, 8 people)</div><div class="todo-dl">✓ Conf: #6551286 · Under Aric Lane</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Palace of Versailles Tour (Jul 5 @ 10am)</div><div class="todo-dl">✓ Viator Conf: 1764816493</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Seine Sunset Cruise (Jul 6 @ 9:15pm)</div><div class="todo-dl">✓ Viator Conf: 1772569543</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Macaron Making Class (Jul 6 @ 2pm)</div><div class="todo-dl">✓ Booked</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Disneyland Paris (Jul 7 @ 9am, Lane family of 4)</div><div class="todo-dl">✓ Booked</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Louvre Guided Tour (Jul 8 @ 10:45am, 6 people)</div><div class="todo-dl">✓ Viator Conf: 1387849747</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Paris Airbnb — 2 bis Rue Alasseur 75015</div><div class="todo-dl">✓ Conf: HMHJEWH9M9</div></div></div>
-      </div>
-    </div>
-
-    <div class="todo-column">
-      <h3>✈️ Pre-Trip</h3>
-      <div class="todo-items">
-        <div class="todo-item todo-urgent" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Check ALL passports — valid 6 months past July 9, 2026. Especially Joey (7) &amp; Evie (4)!</div><div class="todo-dl">⚠ Do this today</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Get travel insurance — all 3 families</div><div class="todo-dl">Before June 1</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">International phone plans (UK + France) for all families</div><div class="todo-dl">Before June 25</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Notify credit cards of travel dates (Jun 27 – Jul 9)</div><div class="todo-dl">Before June 25</div></div></div>
-        <div class="todo-item" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Download SNCF app for Versailles &amp; Paris RER trains</div><div class="todo-dl">Before Jul 4</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Outbound flights — UA 2123 + UA 262 (Lane + OG Lane) / DL 0020 (Aric &amp; Jay)</div><div class="todo-dl">✓ LJC80T &amp; HJ3JNO</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Return flights — UA 986 + UA 664 (Lane + OG Lane) / DL 0081 (Aric &amp; Jay)</div><div class="todo-dl">✓ LJC80T &amp; HJ3JNO</div></div></div>
-        <div class="todo-item done" onclick="toggleTodo(this)"><div class="todo-check"></div><div><div class="todo-text">Eurostar booked for all 3 families (Jul 4 @ 12:31pm)</div><div class="todo-dl">✓ Conf: 2343928 / J6W44N</div></div></div>
-      </div>
-    </div>
-
-  </div>
-</div></section>
 
 <!-- ═══ WISHLISTS + NOTES ═══ -->
 <section><div class="container">
@@ -2099,8 +2028,6 @@ function switchFlightTab(group){
   }
 }
 
-/* TO-DO */
-function toggleTodo(el){el.classList.toggle('done');}
 </script>
 </body>
 </html>
