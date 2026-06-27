@@ -190,6 +190,21 @@
   .restaurant-time{font-weight:500;}
   .restaurant-who{font-size:11px;color:var(--ink-faint);margin-top:5px;}
 
+  /* ── TICKET LINKS ── */
+  .ticket-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .ticket-link{display:inline-flex;align-items:center;gap:5px;background:rgba(42,107,60,.12);border:1px solid rgba(42,107,60,.3);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--success);text-decoration:none;transition:background .15s;}
+  .ticket-link:hover{background:rgba(42,107,60,.2);}
+  .ticket-link-train{background:rgba(43,74,107,.1);border-color:rgba(43,74,107,.3);color:var(--london);}
+  .ticket-link-train:hover{background:rgba(43,74,107,.2);}
+
+  /* ── WIMBLEDON OOP BANNER ── */
+  .oop-banner{background:linear-gradient(135deg,#0d2d0d,#1a4d1a);border-radius:10px;padding:.75rem 1rem;margin-top:8px;display:flex;align-items:center;gap:10px;}
+  .oop-banner-icon{font-size:20px;flex-shrink:0;}
+  .oop-banner-text{flex:1;}
+  .oop-banner-title{font-size:12px;font-weight:700;color:#81C784;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px;}
+  .oop-banner-desc{font-size:12px;color:rgba(255,255,255,.75);line-height:1.4;}
+  .oop-banner-link{display:inline-block;margin-top:5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:5px;padding:3px 10px;font-size:11px;font-weight:500;color:white;text-decoration:none;}
+
   /* ── NOTES ── */
   .notes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
   .note-card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.4rem;}
@@ -1033,6 +1048,10 @@
           <div class="event-body">
             <div class="event-title">Tower of London — Guided Tour ✅</div>
             <div class="event-desc">Crown Jewels, Beefeater Yeoman Warder guides, White Tower, medieval walls &amp; towers · Allow ~2 hours · HM Tower of London, London EC3N 4AB</div>
+            <span class="event-conf">Ref: DVOUA4UGXOPO6 · 7 tickets · 4 Adult, 1 Child, 2 Senior</span>
+            <div class="ticket-links">
+              <a href="https://drive.google.com/file/d/1sR1wBB0VcuQs2FOF5Iwff5MJCNLep_Aj/view" target="_blank" class="ticket-link">📄 Tower of London Tickets (all 7) ↗</a>
+            </div>
             <div class="event-note">Tip: the famous ravens are usually most visible in the morning and late afternoon — keep an eye out as you're leaving</div>
           </div>
         </div>
@@ -1195,6 +1214,22 @@
         </div>
 
         <!-- Wimbledon Brief Card -->
+        <div class="event-row">
+          <div class="event-time">📣 Tonight</div>
+          <div class="event-body">
+            <div class="event-title">Check the Order of Play — Published This Evening</div>
+            <div class="event-desc">Wimbledon releases tomorrow's full schedule tonight after the day's play ends — usually around 7–8pm London time. This tells you exactly who is on Centre Court and No.1 Court on July 3.</div>
+            <div class="oop-banner">
+              <div class="oop-banner-icon">🎾</div>
+              <div class="oop-banner-text">
+                <div class="oop-banner-title">Order of Play — Day 5 drops tonight</div>
+                <div class="oop-banner-desc">Check wimbledon.com or the Wimbledon app this evening (Jul 2) to see who's on Centre Court. Share with David, Craig, Tammy &amp; Aric so everyone knows what to expect tomorrow.</div>
+                <a href="https://www.wimbledon.com/en_GB/atoz/order_of_play.html" target="_blank" class="oop-banner-link">View Order of Play ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="event-row">
           <div class="event-time">Day<br>Guide</div>
           <div class="event-body">
@@ -1382,11 +1417,19 @@
           <div class="event-time">12:31 pm</div>
           <div class="event-body">
             <div class="event-title">Eurostar: St Pancras → Paris Gare du Nord ✅</div>
-            <div class="event-desc">Through the Channel Tunnel! Arrives Paris 3:49 pm</div>
+            <div class="event-desc">Through the Channel Tunnel! Arrives Paris 3:49 pm · Train 9024 · Coach 8 · Ref: DCYYWV · Gates close 30 min before departure — scan each ticket individually</div>
             <div class="inline-flight">
               <div><div class="if-code">STP</div><div class="if-city">St Pancras</div><div class="if-time">12:31 pm</div></div>
-              <div class="if-mid"><div class="if-carrier">EUROSTAR</div><div class="if-num">Ref: 2343928 / J6W44N</div><div class="if-arrow">🚄</div><div class="if-dur">~2h 18m</div></div>
+              <div class="if-mid"><div class="if-carrier">EUROSTAR</div><div class="if-num">Train 9024 · Coach 8</div><div class="if-arrow">🚄</div><div class="if-dur">~2h 18m</div></div>
               <div><div class="if-code">GDN</div><div class="if-city">Gare du Nord</div><div class="if-time">3:49 pm</div></div>
+            </div>
+            <div class="ticket-links">
+              <a href="https://drive.google.com/file/d/1ToHBuxiWOpbRTVBgtzSZB37EzGB2FYSj/view" target="_blank" class="ticket-link ticket-link-train">🚄 David · Seat 43 ↗</a>
+              <a href="https://drive.google.com/file/d/1FgioXRy-0tsb7m75as2dHOPH8vJkl2U7/view" target="_blank" class="ticket-link ticket-link-train">🚄 Emily · Seat 44 ↗</a>
+              <a href="https://drive.google.com/file/d/1tBrg25KSLbWdUu2jxZ4CJsZynkonWOei/view" target="_blank" class="ticket-link ticket-link-train">🚄 Craig · Seat 42 ↗</a>
+              <a href="https://drive.google.com/file/d/1N2csaN_WwaFLzHHSR1CCU4o8aoIjTYq_/view" target="_blank" class="ticket-link ticket-link-train">🚄 Tammy · Seat 41 ↗</a>
+              <a href="https://drive.google.com/file/d/142BoQS9byKHtm5ZNwveFzP-fN8PP-qVO/view" target="_blank" class="ticket-link ticket-link-train">🚄 Joey · Seat 51 ↗</a>
+              <a href="https://drive.google.com/file/d/1rBgvSJTKF0cL1Ql9hwJwes6a9fdB1tXG/view" target="_blank" class="ticket-link ticket-link-train">🚄 Evie · Seat 52 ↗</a>
             </div>
           </div>
         </div>
@@ -1875,7 +1918,7 @@
 
 <footer>
   <strong>EuroStepping — London &amp; Paris · Summer 2026</strong><br>
-  <span style="margin-top:6px;display:block">Last updated: May 2026 · Lane · OG Lane · Lane/Heiny</span>
+  <span style="margin-top:6px;display:block">Last updated: June 27, 2026 — departure day! · Lane · OG Lane · Lane/Heiny</span>
 </footer>
 
 <script>
